@@ -14,10 +14,6 @@ import java.util.logging.Logger;
  * @author gabriellavetencourt
  */
 public class Trabajadores extends Thread {
-    //19 empleados
-    //guinostas y disenador 1  c 4 dias
-    //animador 1 al dia
-    //actor 5 doblajes al dia 
     private String nombre;
     private double tipo;
     private double sueldo;
@@ -26,7 +22,7 @@ public class Trabajadores extends Thread {
     private Drive drive;
     private int duracionDia;
     private double produccionDiaria;
-    private double diasParaCompletar; //dias que se tarda un trabajador en completar su tarea
+    private double diasParaCompletar; //dias que se tarda un trabajador en completar su tarea //acumulatedOutput
     private Semaphore mutex;
 
     public Trabajadores(String nombre, double tipo, String empresa, Drive drive, int duracionDia, float produccionDiaria, float diasParaCompletar, Semaphore mutex) {
@@ -102,6 +98,22 @@ public class Trabajadores extends Thread {
         double sueldo = getSueldoAcumulado() + getSueldo()*24;
         setSueldoAcumulado(sueldo);
         return sueldo;
+    }
+    
+    public void ProduccionCapitulo(){
+        this.diasParaCompletar += this.produccionDiaria;
+        if(this.diasParaCompletar >= 1){
+            try{
+                int diasAc =  (int) Math.floor(this.diasParaCompletar);
+                this.mutex.acquire(1);
+                //this.drive.AGGDRIVE(diasAc, this.tipo);
+                this.mutex.release();
+                this.diasParaCompletar = 0;
+                
+            }catch(Exception e){
+                System.out.println(e);
+            }
+        }
     }
 
     public String getNombre() {
