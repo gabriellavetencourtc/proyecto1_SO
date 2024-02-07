@@ -43,7 +43,7 @@ private int salario;
         /**
          * Ejecucion del director, si no hay 0 dias restantes, revisa al pm en una hora aleatoria cambiando el booleano de
          * activacion para el thread que ejecuta las reviciones
-         * al final de los 25 minutos de la revision, cambia el booleano para desactivar al thread de revision
+         * al final de los 35 minutos de la revision, cambia el booleano para desactivar al thread de revision
          * 
          * Si hay 0 dias restantes, procede a vender los juegos
          */
@@ -69,14 +69,14 @@ private int salario;
                             case 1:
                                 this.director1.setPausa(false);
                                 this.label.setText("Revisando al PM");
-                                sleep(this.duracionMin * 25);
+                                sleep(this.duracionMin * 35);
                                 break;
 
                             case 2:
                                 this.director1.setPausa(true);
                                 this.label.setText("Labores administrativas");
                                 this.director1.setVioAnime(false);
-                                sleep(this.duracionDia - ((this.duracionMin*25) + upperWait));
+                                sleep(this.duracionDia - ((this.duracionMin * 35) + upperWait));
                         }
                     }
                     
@@ -120,11 +120,16 @@ private int salario;
      */
     
     public void enviarCapitulos(){
-        if(this.empresa.getNombreEmpresa().equals("Capcom")){
-            this.empresa.sumarIngresos((this.drive.getCapitulo()* 400) + (this.drive.getCapituloPlotTwist()* 750));       
-        }else{
-            this.empresa.sumarIngresos((this.drive.getCapitulo()* 350) + (this.drive.getCapituloPlotTwist()* 700));
-        }
+        if(this.empresa.getNombreEmpresa().equalsIgnoreCase("Nickelodeon")){
+            this.empresa.sumarIngresos((this.drive.getCapitulo()* 450) + (this.drive.getCapituloPlotTwist()* 500));       
+        
+        }else if(this.empresa.getNombreEmpresa().equalsIgnoreCase("Cartoon Network")){
+             this.empresa.sumarIngresos((this.drive.getCapitulo()* 300) + (this.drive.getCapituloPlotTwist()* 650));
+        
+        }else if(this.empresa.getNombreEmpresa().equalsIgnoreCase("Star Channel")){
+             this.empresa.sumarIngresos((this.drive.getCapitulo()* 350) + (this.drive.getCapituloPlotTwist()* 800));
+   
+         }
         
         this.drive.sumarSalario(this.salario);
         this.empresa.sumarSalario(this.drive.getSalario());
@@ -138,7 +143,11 @@ private int salario;
         this.director1.setFaltasPM(0);
         this.director1.getFaltaLabel().setText(Integer.toString(this.director1.getFaltasPM()));
         
+   
+         
     }
-    
 }
+         
+    
+
 

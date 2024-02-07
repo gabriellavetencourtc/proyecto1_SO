@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 public class Director extends Thread{
     
     private Drive drive;
+    private double salario = 60;
     private Semaphore mutex;
     private ProjectManager pm;
     private boolean pausa;
@@ -29,6 +30,7 @@ public class Director extends Thread{
     
     public Director(Drive drive, Semaphore m, ProjectManager proj, int min, JLabel label, JLabel falta){
         this.drive = drive;
+        this.salario = 0;
         this.mutex = m;
         this.pm = proj;
         this.duracionMin = min;
@@ -91,8 +93,11 @@ public class Director extends Thread{
     
     }
     
+    public double salarioDiario() {
+    return this.salario * 24;
+}
 
-    public boolean isPausa() {
+    public boolean Pausa() {
         return pausa;
     }
 
