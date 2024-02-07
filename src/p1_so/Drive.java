@@ -315,6 +315,18 @@ public class Drive {
         this.diasTranscurridos = diasTranscurridos;
     }
     
+    //no estoy segura porque lo multiplica por 1000
+    public void sumarSalario(double salary){
+        this.salario += ((salary/1000)*24);
+    }
+
+
+    public void sumarDiasTranscurridos() {
+        this.diasTranscurridos += 1;
+        this.labels[8].setText(Integer.toString(this.diasTranscurridos));
+        
+        
+    }
     
   
     
