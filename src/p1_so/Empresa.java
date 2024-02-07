@@ -14,10 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class Empresa {
 
-
     private String empresa;
 
-    
     private String nombreEmpresa;
     private Lista guionistas;
     private Lista disenadores;
@@ -26,10 +24,8 @@ public class Empresa {
     private Lista guionistasPT;
     private Lista ensambladores;
     private ProjectManager pm;
-    // private Director dir;
-    //private DirectorWatch dirWatch;    
     private Director dir;
-    private RevisionPM revision;    
+    private RevisionPM revision;
     private Semaphore mutex;
     private Drive drive;
     private double ingresos;
@@ -38,7 +34,7 @@ public class Empresa {
     private JLabel[] labels;
     private int cantTrabajadores;
 
-    public Empresa(int cantTrabajadores, String empresa){
+    public Empresa(int cantTrabajadores, String empresa) {
         this.nombreEmpresa = empresa;
         this.guionistas = new Lista();
         this.disenadores = new Lista();
@@ -54,8 +50,8 @@ public class Empresa {
         this.labels = labels;
         this.cantTrabajadores = cantTrabajadores;
     }
+    
 
-    //PILAS FALTAN GETTERS Y SETTERS DEL DIR Y DIRWATCH
     //CREO Q HAY UNOS LABELS EXTRA PENSANDO EN COMO ERA SU INTERFAZ
     public void AggTrabajador(Trabajadores t) {
         if ((this.guionistas.getSize()
@@ -109,7 +105,8 @@ public class Empresa {
             limiteTrabajadores();
         }
     }
-     public void eliminarTrabajador(int tipo) {
+
+    public void eliminarTrabajador(int tipo) {
         Nodo aux;
         Trabajadores auxTrabajadores;
 
@@ -165,8 +162,8 @@ public class Empresa {
         this.labels[7].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
 
     }
-     
-         public boolean disminuirTrabajadores() {
+
+    public boolean disminuirTrabajadores() {
         int totalTrabajadores = guionistas.getSize() + disenadores.getSize() + animadores.getSize() + actores.getSize() + guionistasPT.getSize() + ensambladores.getSize();
         return totalTrabajadores < cantTrabajadores;
     }
@@ -193,7 +190,7 @@ public class Empresa {
 
             aux = this.ensambladores.getpLast();
             auxEnsamblador = Ensamblador.class.cast(aux.getData());
-            // auxEnsamblador.setIsActive(false);
+            auxEnsamblador.setActivo(false);
             this.ensambladores.eliminarAlFinal();
             this.labels[6].setText(Integer.toString(this.ensambladores.getSize()));
             this.labels[13].setText(Integer.toString(this.ensambladores.getSize()));
@@ -209,12 +206,12 @@ public class Empresa {
         this.labels[15].setText(Double.toString(this.utilidad));
     }
 
-    public void aggSalario(double salario) {
+    public void sumSalario(double salario) {
         this.salario += salario;
         this.labels[16].setText(Double.toString(this.salario));
     }
 
-    public void aggIngreso(double ingreso) {
+    public void sumIngreso(double ingreso) {
         this.ingresos += ingreso;
         this.labels[14].setText(Double.toString(this.ingresos));
     }
@@ -279,7 +276,6 @@ public class Empresa {
         this.ensambladores = ensambladores;
     }
 
-
     public ProjectManager getPm() {
         return pm;
     }
@@ -287,7 +283,6 @@ public class Empresa {
     public void setPm(ProjectManager pm) {
         this.pm = pm;
     }
-
 
     public Director getDir() {
         return dir;
@@ -305,7 +300,6 @@ public class Empresa {
         this.revision = revision;
     }
 
-    
     public Drive getDrive() {
         return drive;
     }
@@ -313,7 +307,6 @@ public class Empresa {
     public void setDrive(Drive drive) {
         this.drive = drive;
     }
-
 
     public Semaphore getMutex() {
         return mutex;
@@ -347,7 +340,6 @@ public class Empresa {
         this.labels = labels;
     }
 
-
     public int getCantTrabajadores() {
         return cantTrabajadores;
     }
@@ -355,8 +347,6 @@ public class Empresa {
     public void setCantTrabajadores(int cantTrabajadores) {
         this.cantTrabajadores = cantTrabajadores;
     }
-    
-    
 
     public String getNombreEmpresa() {
         return nombreEmpresa;
@@ -369,24 +359,5 @@ public class Empresa {
     public double getUtilidad() {
         return utilidad;
     }
-
-
-    
-    public void sumarSalario(double salario){
-        this.salario += salario;
-        this.labels[16].setText(Double.toString(this.salario));
-    }
-    
-    public void sumarIngresos(double ingresos){
-        this.ingresos += ingresos;
-        this.labels[14].setText(Double.toString(this.ingresos));
-    }
-
-    
- 
-    public void devLimitNotice(){
-        JOptionPane.showMessageDialog(null, "Limite de desarrolladores alcanzado, incremente el maximo para poder añadir más");
-    }
-    
 
 }

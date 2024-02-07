@@ -121,18 +121,18 @@ private int salario;
     
     public void enviarCapitulos(){
         if(this.empresa.getNombreEmpresa().equalsIgnoreCase("Nickelodeon")){
-            this.empresa.sumarIngresos((this.drive.getCapitulo()* 450) + (this.drive.getCapituloPlotTwist()* 500));       
+            this.empresa.sumIngreso((this.drive.getCapitulo()* 450) + (this.drive.getCapituloPlotTwist()* 500));       
         
         }else if(this.empresa.getNombreEmpresa().equalsIgnoreCase("Cartoon Network")){
-             this.empresa.sumarIngresos((this.drive.getCapitulo()* 300) + (this.drive.getCapituloPlotTwist()* 650));
+             this.empresa.sumIngreso((this.drive.getCapitulo()* 300) + (this.drive.getCapituloPlotTwist()* 650));
         
         }else if(this.empresa.getNombreEmpresa().equalsIgnoreCase("Star Channel")){
-             this.empresa.sumarIngresos((this.drive.getCapitulo()* 350) + (this.drive.getCapituloPlotTwist()* 800));
+             this.empresa.sumIngreso((this.drive.getCapitulo()* 350) + (this.drive.getCapituloPlotTwist()* 800));
    
          }
         
         this.drive.sumarSalario(this.salario);
-        this.empresa.sumarSalario(this.drive.getSalario());
+        this.empresa.sumSalario(this.drive.getSalario());
         this.empresa.setUtilidad(this.empresa.getIngresos() - this.empresa.getSalario());
         this.drive.setSalario(0);
         this.drive.setCapitulo(0);
