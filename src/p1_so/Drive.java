@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package p1_so;
+
 import javax.swing.JLabel;
 
 /**
@@ -10,6 +11,7 @@ import javax.swing.JLabel;
  * @author gabriellavetencourt
  */
 public class Drive {
+
     private int guion;
     private int escenario;
     private int animacion;
@@ -40,7 +42,7 @@ public class Drive {
         this.salario = 0;
         this.diasTranscurridos = 0;
     }
-    
+
     public void aggDrive(int cantidad, int tipo) {
 
         if (tipo == 0) { // guionista
@@ -111,93 +113,93 @@ public class Drive {
             }
         }
     }
-    
-        public boolean ReqCapitulo() {
-        if(this.empresa.equalsIgnoreCase("Nickelodeon")){
-            if(this.contador >= 5){
+
+    public boolean ReqCapitulo() {
+        if (this.empresa.equalsIgnoreCase("Nickelodeon")) {
+            if (this.contador >= 5) {
                 return this.guion >= 2 && this.escenario >= 1 && this.animacion >= 4 && this.doblaje >= 4 && this.plotwist >= 2;
-                
-            }else{
+
+            } else {
                 return this.guion >= 2 && this.escenario >= 1 && this.animacion >= 4 && this.doblaje >= 4;
             }
         }
-            
-        if(this.empresa.equalsIgnoreCase("Cartoon Network")){
-            if(this.contador >= 3){
+
+        if (this.empresa.equalsIgnoreCase("Cartoon Network")) {
+            if (this.contador >= 3) {
                 return this.guion >= 1 && this.escenario >= 2 && this.animacion >= 6 && this.doblaje >= 5 && this.plotwist >= 1;
-                
-            }else{
+
+            } else {
                 return this.guion >= 1 && this.escenario >= 2 && this.animacion >= 6 && this.doblaje >= 5;
             }
-            
+
         }
-        
-         if(this.empresa.equalsIgnoreCase("Star Channel")){
-            if(this.contador >= 6){
+
+        if (this.empresa.equalsIgnoreCase("Star Channel")) {
+            if (this.contador >= 6) {
                 return this.guion >= 2 && this.escenario >= 3 && this.animacion >= 4 && this.doblaje >= 6 && this.plotwist >= 5;
-                
-            }else{
+
+            } else {
                 return this.guion >= 2 && this.escenario >= 3 && this.animacion >= 4 && this.doblaje >= 6;
             }
-        
+
         }
-         return false; //pilas
-        }
-        
-            public void crearCapitulo() {
-        if(this.empresa.equalsIgnoreCase("Nickelodeon")){
+        return false; //pilas
+    }
+
+    public void crearCapitulo() {
+        if (this.empresa.equalsIgnoreCase("Nickelodeon")) {
             this.guion -= 2;
             this.escenario -= 1;
             this.animacion -= 4;
             this.doblaje -= 4;
-            
-            if(this.contador >= 5){
+
+            if (this.contador >= 5) {
                 this.plotwist -= 2;
                 this.contador = 0;
                 this.capituloPlotTwist += 1;
-                
-            }else{
+
+            } else {
                 this.contador += 1;
                 this.capitulo += 1;
             }
-                
+
         }
-        
-        if(this.empresa.equalsIgnoreCase("Cartoon Network")){
+
+        if (this.empresa.equalsIgnoreCase("Cartoon Network")) {
             this.guion -= 1;
             this.escenario -= 2;
             this.animacion -= 6;
             this.doblaje -= 5;
-            
-            if(this.contador >= 3){
+
+            if (this.contador >= 3) {
                 this.plotwist -= 1;
                 this.contador = 0;
                 this.capituloPlotTwist += 1;
-                
-            }else{
+
+            } else {
                 this.contador += 1;
                 this.capitulo += 1;
             }
-                
+
         }
-        
-        if(this.empresa.equalsIgnoreCase("Star Channel")){
+
+        if (this.empresa.equalsIgnoreCase("Star Channel")) {
             this.guion -= 2;
             this.escenario -= 3;
             this.animacion -= 4;
             this.doblaje -= 6;
-            
-            if(this.contador >= 6){
+
+            if (this.contador >= 6) {
                 this.plotwist -= 5;
                 this.contador = 0;
                 this.capituloPlotTwist += 1;
-                
-            }else{
+
+            } else {
                 this.contador += 1;
                 this.capitulo += 1;
             }
-                
-        }     
+
+        }
         this.labels[0].setText(Integer.toString(this.guion));
         this.labels[1].setText(Integer.toString(this.escenario));
         this.labels[2].setText(Integer.toString(this.animacion));
@@ -205,10 +207,9 @@ public class Drive {
         this.labels[4].setText(Integer.toString(this.plotwist));
         this.labels[6].setText(Integer.toString(this.capitulo));
         this.labels[7].setText(Integer.toString(this.capituloPlotTwist));
-         
+
     }
-    
-    
+
     public int getGuion() {
         return guion;
     }
@@ -257,7 +258,6 @@ public class Drive {
         this.diasRestantes = diasRestantes;
         this.labels[5].setText(Integer.toString(this.diasRestantes));
     }
-   
 
     public int getDeadline() {
         return deadline;
@@ -314,6 +314,7 @@ public class Drive {
     public void setDiasTranscurridos(int diasTranscurridos) {
         this.diasTranscurridos = diasTranscurridos;
     }
+<<<<<<< Updated upstream
     
     //no estoy segura porque lo multiplica por 1000
     public void sumarSalario(double salary){
@@ -330,4 +331,7 @@ public class Drive {
     
   
     
+=======
+
+>>>>>>> Stashed changes
 }
