@@ -24,6 +24,7 @@ public class Trabajadores extends Thread {
     private double produccionDiaria;
     private double diasParaCompletar; //dias que se tarda un trabajador en completar su tarea //acumulatedOutput
     private Semaphore mutex;
+    private boolean activo = true;
 
     public Trabajadores(String nombre, double tipo, String empresa, Drive drive, int duracionDia, float produccionDiaria, float diasParaCompletar, Semaphore mutex) {
         this.nombre = nombre;
@@ -194,6 +195,14 @@ public class Trabajadores extends Thread {
 
     public void setMutex(Semaphore mutex) {
         this.mutex = mutex;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
 
