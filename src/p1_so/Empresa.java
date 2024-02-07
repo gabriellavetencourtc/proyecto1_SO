@@ -13,13 +13,12 @@ import javax.swing.JOptionPane;
  * @author gabriellavetencourt
  */
 public class Empresa {
-<<<<<<< Updated upstream
+
 
     private String empresa;
-=======
+
     
     private String nombreEmpresa;
->>>>>>> Stashed changes
     private Lista guionistas;
     private Lista disenadores;
     private Lista animadores;
@@ -27,31 +26,20 @@ public class Empresa {
     private Lista guionistasPT;
     private Lista ensambladores;
     private ProjectManager pm;
-<<<<<<< Updated upstream
     // private Director dir;
     //private DirectorWatch dirWatch;    
-=======
     private Director dir;
     private RevisionPM revision;    
->>>>>>> Stashed changes
     private Semaphore mutex;
     private Drive drive;
     private double ingresos;
     private double salario;
     private double utilidad;
-
-
     private JLabel[] labels;
-
     private int cantTrabajadores;
 
-<<<<<<< Updated upstream
-    public Empresa(int cantTrabajadores, String empresa) {
-        this.empresa = empresa;
-=======
     public Empresa(int cantTrabajadores, String empresa){
         this.nombreEmpresa = empresa;
->>>>>>> Stashed changes
         this.guionistas = new Lista();
         this.disenadores = new Lista();
         this.animadores = new Lista();
@@ -239,7 +227,6 @@ public class Empresa {
         return empresa;
     }
 
-<<<<<<< Updated upstream
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
     }
@@ -292,8 +279,7 @@ public class Empresa {
         this.ensambladores = ensambladores;
     }
 
-=======
->>>>>>> Stashed changes
+
     public ProjectManager getPm() {
         return pm;
     }
@@ -302,8 +288,7 @@ public class Empresa {
         this.pm = pm;
     }
 
-<<<<<<< Updated upstream
-=======
+
     public Director getDir() {
         return dir;
     }
@@ -329,22 +314,13 @@ public class Empresa {
         this.drive = drive;
     }
 
->>>>>>> Stashed changes
+
     public Semaphore getMutex() {
         return mutex;
     }
 
     public void setMutex(Semaphore mutex) {
         this.mutex = mutex;
-    }
-
-<<<<<<< Updated upstream
-    public Drive getDrive() {
-        return drive;
-    }
-
-    public void setDrive(Drive drive) {
-        this.drive = drive;
     }
 
     public double getIngresos() {
@@ -363,10 +339,6 @@ public class Empresa {
         this.salario = salario;
     }
 
-
-=======
-    
->>>>>>> Stashed changes
     public JLabel[] getLabels() {
         return labels;
     }
@@ -375,7 +347,7 @@ public class Empresa {
         this.labels = labels;
     }
 
-<<<<<<< Updated upstream
+
     public int getCantTrabajadores() {
         return cantTrabajadores;
     }
@@ -385,7 +357,7 @@ public class Empresa {
     }
     
     
-=======
+
     public String getNombreEmpresa() {
         return nombreEmpresa;
     }
@@ -398,10 +370,7 @@ public class Empresa {
         return utilidad;
     }
 
-    public void setUtilidad(double utilidad) {
-        this.utilidad = utilidad;
-        this.labels[15].setText(Double.toString(this.utilidad));
-    }
+
     
     public void sumarSalario(double salario){
         this.salario += salario;
@@ -413,26 +382,11 @@ public class Empresa {
         this.labels[14].setText(Double.toString(this.ingresos));
     }
 
-    public double getIngresos() {
-        return ingresos;
-    }
-
-    public void setIngresos(double ingresos) {
-        this.ingresos = ingresos;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
     
  
     public void devLimitNotice(){
         JOptionPane.showMessageDialog(null, "Limite de desarrolladores alcanzado, incremente el maximo para poder añadir más");
     }
     
->>>>>>> Stashed changes
+
 }
