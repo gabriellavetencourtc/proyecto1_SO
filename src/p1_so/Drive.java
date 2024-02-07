@@ -314,7 +314,11 @@ public class Drive {
     public void setDiasTranscurridos(int diasTranscurridos) {
         this.diasTranscurridos = diasTranscurridos;
     }
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
     //no estoy segura porque lo multiplica por 1000
     public void sumarSalario(double salary){
         this.salario += ((salary/1000)*24);
@@ -329,4 +333,8 @@ public class Drive {
     }
     
   
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
 }

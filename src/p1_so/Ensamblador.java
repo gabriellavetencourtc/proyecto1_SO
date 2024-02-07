@@ -11,11 +11,12 @@ import java.util.concurrent.Semaphore;
  *
  * @author daniela
  */
+//FALTA LO DEL PLOTWIST
 public class Ensamblador extends Thread {
     
     private Drive drive;
     private Semaphore mutex;
-    private double salario = 25;
+    private double salario = 50;
     private boolean activo = true;
     private int duracionDia;
 
