@@ -13,10 +13,10 @@ import javax.swing.JOptionPane;
  */
 public class Main extends javax.swing.JFrame {
 
-        Empresa Nickelodeon = new Empresa(19, "Nickelodeon");
+        Empresa Nickelodeon = new Empresa(17, "Nickelodeon"); //19 con PM y Dir
         Nickelodeon nick = new Nickelodeon();
         
-        int duracionDia;
+        int duracionDia = 3000;
     /**
      * Creates new form Main
      */
@@ -45,7 +45,7 @@ public class Main extends javax.swing.JFrame {
 //        
 //        this.squareEnix.getCompanyDrive().setLabels(CartoonDriveLabels);
 //        this.squareEnix.setLabels(CartoonLabels);
-        this.DuracionDia.setText(Integer.toString(duracionDia));
+        this.DuracionDiaTF.setText(Integer.toString(duracionDia));
         
        
     //Lectura de la configuracion guardada en txt 
@@ -136,7 +136,7 @@ public class Main extends javax.swing.JFrame {
         MasEnsambladoresNick = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        DuracionDia = new javax.swing.JTextField();
+        DuracionDiaTF = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -147,6 +147,8 @@ public class Main extends javax.swing.JFrame {
         masDeadline = new javax.swing.JButton();
         deadline = new javax.swing.JLabel();
         menosDeadline = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
+        mostrarNick = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -300,10 +302,60 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        Guardar.setText("Guardar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarActionPerformed(evt);
+            }
+        });
+
+        mostrarNick.setText("Mostrar");
+        mostrarNick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarNickActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 208, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(108, 254, Short.MAX_VALUE)
+                        .addComponent(jLabel9)
+                        .addGap(312, 312, 312))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(DuracionDiaTF, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(menosDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(masDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel11)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel13)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mostrarNick, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(salir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Guardar, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)))
+                        .addGap(15, 15, 15))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -359,39 +411,6 @@ public class Main extends javax.swing.JFrame {
                         .addGap(113, 113, 113)
                         .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 213, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(108, 108, 108)
-                                .addComponent(jLabel9))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(DuracionDia, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(menosDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(masDeadline)))))
-                        .addGap(306, 306, 306))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(salir)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -439,23 +458,30 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(EnsambladoresNick)
                     .addComponent(MenosEnsambladoresNick)
                     .addComponent(MasEnsambladoresNick))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(DuracionDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(masDeadline)
-                    .addComponent(deadline)
-                    .addComponent(jLabel13)
-                    .addComponent(menosDeadline))
-                .addGap(2, 2, 2)
-                .addComponent(salir)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(DuracionDiaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(deadline)
+                            .addComponent(jLabel13)
+                            .addComponent(menosDeadline)
+                            .addComponent(masDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(mostrarNick)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Guardar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(salir, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))))
         );
 
         pack();
@@ -464,7 +490,7 @@ public class Main extends javax.swing.JFrame {
     private void MenosGuionistasNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuionistasNickActionPerformed
         // TODO add your handling code here:
         if(this.Nickelodeon.getGuionistas().getSize() > 1){
-            this.Nickelodeon.eliminarTrabajador(1);
+            this.Nickelodeon.eliminarTrabajador(0);
         }else{
             minErrorTrab();
         }  
@@ -482,7 +508,7 @@ public class Main extends javax.swing.JFrame {
     private void MenosAnimadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosAnimadorNickActionPerformed
         // TODO add your handling code here:
          if(this.Nickelodeon.getAnimadores().getSize() > 1){
-            this.Nickelodeon.eliminarTrabajador(1);
+            this.Nickelodeon.eliminarTrabajador(2);
         }else{
             minErrorTrab();
         }
@@ -491,7 +517,7 @@ public class Main extends javax.swing.JFrame {
     private void MenosActoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActoresNickActionPerformed
         // TODO add your handling code here:
          if(this.Nickelodeon.getActores().getSize() > 1){
-            this.Nickelodeon.eliminarTrabajador(1);
+            this.Nickelodeon.eliminarTrabajador(3);
         }else{
             minErrorTrab();
         }
@@ -500,7 +526,7 @@ public class Main extends javax.swing.JFrame {
     private void MenosGuioPlotNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuioPlotNickActionPerformed
         // TODO add your handling code here:
          if(this.Nickelodeon.getGuionistasPT().getSize() > 1){
-            this.Nickelodeon.eliminarTrabajador(1);
+            this.Nickelodeon.eliminarTrabajador(4);
         }else{
             minErrorTrab();
         }
@@ -509,7 +535,7 @@ public class Main extends javax.swing.JFrame {
     private void MenosEnsambladoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosEnsambladoresNickActionPerformed
         // TODO add your handling code here:
          if(this.Nickelodeon.getEnsambladores().getSize() > 1){
-            this.Nickelodeon.eliminarTrabajador(1);
+            this.Nickelodeon.borrarEnsamblador();
         }else{
             minErrorTrab();
         }
@@ -579,6 +605,22 @@ public class Main extends javax.swing.JFrame {
         this.deadline.setText(Integer.toString(deadlineActual));
     }//GEN-LAST:event_masDeadlineActionPerformed
 
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+        // TODO add your handling code here:
+//         if(DuracionDiaTF.getText().matches("[0-9]+")){
+//            saveConfig(capcom, squareEnix, Integer.parseInt(configdayDuration.getText()));
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Error, el cuadro de dias restantes solo debe contener numeros");
+//        }
+
+    }//GEN-LAST:event_GuardarActionPerformed
+
+    private void mostrarNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNickActionPerformed
+        // TODO add your handling code here:
+        
+        nick.setVisible(true);
+    }//GEN-LAST:event_mostrarNickActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -618,8 +660,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel ActoresNick;
     private javax.swing.JLabel AnimadorNick;
     private javax.swing.JLabel DisenadoresNick;
-    private javax.swing.JTextField DuracionDia;
+    private javax.swing.JTextField DuracionDiaTF;
     private javax.swing.JLabel EnsambladoresNick;
+    private javax.swing.JButton Guardar;
     private javax.swing.JLabel GuioPlotNick;
     private javax.swing.JLabel GuionistasNick;
     private javax.swing.JButton MasActorNick;
@@ -654,6 +697,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JButton masDeadline;
     private javax.swing.JButton menosDeadline;
+    private javax.swing.JButton mostrarNick;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }
