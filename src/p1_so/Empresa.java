@@ -52,7 +52,7 @@ public class Empresa {
     }
     
 
-    //CREO Q HAY UNOS LABELS EXTRA PENSANDO EN COMO ERA SU INTERFAZ
+
     public void AggTrabajador(Trabajadores t) {
         if ((this.guionistas.getSize()
                 + this.disenadores.getSize()
@@ -66,39 +66,37 @@ public class Empresa {
             if (t.getTipo() == 0) { //guion
                 this.guionistas.insertarAlFinal(tNodo);
                 this.labels[1].setText(Integer.toString(this.guionistas.getSize()));
-                this.labels[8].setText(Integer.toString(this.guionistas.getSize()));
+              
             }
 
             if (t.getTipo() == 1) { //disenadores
                 this.disenadores.insertarAlFinal(tNodo);
                 this.labels[2].setText(Integer.toString(this.disenadores.getSize()));
-                this.labels[9].setText(Integer.toString(this.disenadores.getSize()));
             }
 
             if (t.getTipo() == 2) { //animadores
                 this.animadores.insertarAlFinal(tNodo);
                 this.labels[3].setText(Integer.toString(this.animadores.getSize()));
-                this.labels[10].setText(Integer.toString(this.animadores.getSize()));
+
             }
 
             if (t.getTipo() == 3) { //actores
                 this.actores.insertarAlFinal(tNodo);
                 this.labels[4].setText(Integer.toString(this.actores.getSize()));
-                this.labels[11].setText(Integer.toString(this.actores.getSize()));
+
             }
 
             if (t.getTipo() == 4) { //guionistasPT
                 this.guionistasPT.insertarAlFinal(tNodo);
                 this.labels[5].setText(Integer.toString(this.guionistasPT.getSize()));
-                this.labels[12].setText(Integer.toString(this.guionistasPT.getSize()));
-            }
 
-            this.labels[0].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize()
+            }
+            int TrabajadoresDisponibles = cantTrabajadores - (this.guionistas.getSize() + this.disenadores.getSize()
                     + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize()
-                    + this.ensambladores.getSize()));
-            this.labels[7].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize()
-                    + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize()
-                    + this.ensambladores.getSize()));
+                    + this.ensambladores.getSize());
+
+            this.labels[0].setText(Integer.toString(TrabajadoresDisponibles));
+            
             t.start();
 
         } else {
@@ -112,61 +110,69 @@ public class Empresa {
 
         if (tipo == 0) { //guionista
             aux = this.guionistas.getpLast();
+            
+            this.guionistas.eliminarAlFinal();
+            this.labels[1].setText(Integer.toString(this.guionistas.getSize()));
+            
             auxTrabajadores = Trabajadores.class.cast(aux.getData());
             auxTrabajadores.setActivo(false);
-            this.guionistas.eliminarAlFinal();
-
-            this.labels[1].setText(Integer.toString(this.guionistas.getSize()));
-            this.labels[8].setText(Integer.toString(this.guionistas.getSize()));
+            
         }
         if (tipo == 1) { //disenadores
             aux = this.disenadores.getpLast();
+            
+            this.disenadores.eliminarAlFinal();
+            this.labels[2].setText(Integer.toString(this.disenadores.getSize()));
+            
             auxTrabajadores = Trabajadores.class.cast(aux.getData());
             auxTrabajadores.setActivo(false);
-            this.disenadores.eliminarAlFinal();
-
-            this.labels[2].setText(Integer.toString(this.disenadores.getSize()));
-            this.labels[9].setText(Integer.toString(this.disenadores.getSize()));
         }
 
         if (tipo == 2) { //animadores
             aux = this.animadores.getpLast();
+
+            this.animadores.eliminarAlFinal();
+            this.labels[3].setText(Integer.toString(this.animadores.getSize()));
+            
             auxTrabajadores = Trabajadores.class.cast(aux.getData());
             auxTrabajadores.setActivo(false);
-            this.animadores.eliminarAlFinal();
-
-            this.labels[3].setText(Integer.toString(this.animadores.getSize()));
-            this.labels[10].setText(Integer.toString(this.animadores.getSize()));
+                     
         }
 
         if (tipo == 3) { //actores
             aux = this.actores.getpLast();
+            
+            this.actores.eliminarAlFinal();
+            this.labels[4].setText(Integer.toString(this.actores.getSize()));
+            
             auxTrabajadores = Trabajadores.class.cast(aux.getData());
             auxTrabajadores.setActivo(false);
-            this.actores.eliminarAlFinal();
-
-            this.labels[4].setText(Integer.toString(this.actores.getSize()));
-            this.labels[11].setText(Integer.toString(this.actores.getSize()));
+            
         }
 
         if (tipo == 4) { //guionistasPT
             aux = this.guionistasPT.getpLast();
-            auxTrabajadores = Trabajadores.class.cast(aux.getData());
-            auxTrabajadores.setActivo(false);
+            
             this.guionistasPT.eliminarAlFinal();
             this.labels[5].setText(Integer.toString(this.guionistasPT.getSize()));
-            this.labels[12].setText(Integer.toString(this.guionistasPT.getSize()));
-
+            
+            auxTrabajadores = Trabajadores.class.cast(aux.getData());
+            auxTrabajadores.setActivo(false);
+           
         }
-        this.labels[0].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
-        this.labels[7].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
 
+        int TrabajadoresDisponibles = cantTrabajadores - (this.guionistas.getSize() + this.disenadores.getSize()
+                    + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize()
+                    + this.ensambladores.getSize());
+
+        this.labels[0].setText(Integer.toString(TrabajadoresDisponibles+1));
+       
     }
 
-    public boolean disminuirTrabajadores() {
-        int totalTrabajadores = guionistas.getSize() + disenadores.getSize() + animadores.getSize() + actores.getSize() + guionistasPT.getSize() + ensambladores.getSize();
-        return totalTrabajadores < cantTrabajadores;
-    }
+//    public boolean disminuirTrabajadores() {
+//        int totalTrabajadores = guionistas.getSize() + disenadores.getSize() + animadores.getSize() + actores.getSize() + guionistasPT.getSize() + ensambladores.getSize();
+//        return totalTrabajadores < cantTrabajadores;
+//    }
 
     public void AggEnsamblador(Ensamblador ensamblador) {
         if ((this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize()
@@ -175,10 +181,10 @@ public class Empresa {
             Nodo eNodo = new Nodo(ensamblador);
             this.ensambladores.insertarAlFinal(eNodo);
             this.labels[6].setText(Integer.toString(this.ensambladores.getSize()));
-            this.labels[13].setText(Integer.toString(this.ensambladores.getSize()));
-
-            this.labels[0].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
-            this.labels[7].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
+            
+            int TrabajadoresDisponibles = cantTrabajadores - (this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize());
+            this.labels[0].setText(Integer.toString(TrabajadoresDisponibles));
+            
             ensamblador.start();
         }
     }
@@ -189,31 +195,35 @@ public class Empresa {
             Ensamblador auxEnsamblador;
 
             aux = this.ensambladores.getpLast();
-            auxEnsamblador = Ensamblador.class.cast(aux.getData());
-            auxEnsamblador.setActivo(false);
             this.ensambladores.eliminarAlFinal();
             this.labels[6].setText(Integer.toString(this.ensambladores.getSize()));
-            this.labels[13].setText(Integer.toString(this.ensambladores.getSize()));
-            this.labels[0].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
-            this.labels[7].setText(Integer.toString(this.guionistas.getSize() + this.disenadores.getSize() + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize() + this.ensambladores.getSize()));
+            
+            auxEnsamblador = Ensamblador.class.cast(aux.getData());
+            auxEnsamblador.setActivo(false);
+            
+            int TrabajadoresDisponibles = cantTrabajadores - (this.guionistas.getSize() + this.disenadores.getSize()
+                    + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize()
+                    + this.ensambladores.getSize());
 
+            this.labels[0].setText(Integer.toString(TrabajadoresDisponibles));
+           
         }
 
     }
 
     public void setUtilidad(double utilidad) {
         this.utilidad = utilidad;
-        this.labels[15].setText(Double.toString(this.utilidad));
+        this.labels[9].setText(Double.toString(this.utilidad));
     }
 
     public void sumSalario(double salario) {
         this.salario += salario;
-        this.labels[16].setText(Double.toString(this.salario));
+        this.labels[10].setText(Double.toString(this.salario));
     }
 
     public void sumIngreso(double ingreso) {
         this.ingresos += ingreso;
-        this.labels[14].setText(Double.toString(this.ingresos));
+        this.labels[8].setText(Double.toString(this.ingresos));
     }
 
     public void limiteTrabajadores() {

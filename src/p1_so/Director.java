@@ -14,8 +14,8 @@ import javax.swing.JLabel;
  *
  * @author daniela
  */
-public class Director extends Thread{
-    
+public class Director extends Thread {
+
     private Drive drive;
     private double salario = 60;
     private Semaphore mutex;
@@ -25,8 +25,8 @@ public class Director extends Thread{
     private boolean vioAnime;
     private int faltasPM;
     private JLabel faltaLabel;
-    
-    public Director(Drive drive, Semaphore m, ProjectManager proj, int min, JLabel falta){
+
+    public Director(Drive drive, Semaphore m, ProjectManager proj, int min, JLabel falta) {
         this.drive = drive;
         this.salario = 0;
         this.mutex = m;
@@ -37,27 +37,26 @@ public class Director extends Thread{
         this.faltasPM = 0;
         this.faltaLabel = falta;
     }
-    
-    
-    public void ejecutar(){
+
+    @Override
+    public void run() {
         try {
             //Se toman pausas cortas entre ejecucion
             sleep(10);
-            while(true){
+            while (true) {
                 //Si ya es la hora de revisar al project manager, el condicional sera cierto y se ejecuta el codigo correspondiente
-                if(!this.pausa){
-                    
+                if (!this.pausa) {
+
                     //Si el pm no esta trabajando y aun no se le ha colocado una falta, se procede a colocarle una falta
-                    if(!"Trabajando".equals(this.pm.getEstadoActual()) && !this.vioAnime){
+                    if (!"Trabajando".equals(this.pm.getEstadoActual()) && !this.vioAnime) {
                         this.mutex.acquire(1);
                         faltaPM();
                         this.mutex.release();
                     }
-                    
-                sleep(5);
-                    
-                    
-                }else{
+
+                    sleep(5);
+
+                } else {
                     try {
                         sleep(this.duracionMin);
                     } catch (InterruptedException ex) {
@@ -65,34 +64,15 @@ public class Director extends Thread{
                     }
                 }
             }
-            
-            /**    public void work(){
-             * this.acc += this.productionPerDay;
-             * if (this.acc >= 1){
-             * try {
-             * //drive
-             * //Seccion critica
-             * this.mutex.acquire(1);          //wait
-             * this.drive.addToDrive(type, 1);
-             * this.acc = 0;
-             * this.mutex.release();                 //signal
-             * } catch (InterruptedException ex) {
-             * Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
-             * }
-             * System.out.println(this.drive.levels);
-             * }
-             * }
-             * 
-             **/     } catch (InterruptedException ex) {
+        } catch (InterruptedException ex) {
             Logger.getLogger(Director.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    
     }
-    
+
     public double salarioDiario() {
-    return this.salario * 24;
-}
+        return this.salario * 24;
+    }
 
     public boolean Pausa() {
         return pausa;
@@ -117,19 +97,20 @@ public class Director extends Thread{
     public void setFaltasPM(int faltasPM) {
         this.faltasPM = faltasPM;
     }
- 
+
     /**
      * Funcion para registrar fallas del pm
      */
-    public void faltaPM(){
+    public void faltaPM() {
         /**
-         * Se modifica el booleano que indica que ya se penalizo al pm
-         * Aumentan en 1 las penalizaciones para este deadline y se reduce su salario en 50
+         * Se modifica el booleano que indica que ya se penalizo al pm Aumentan
+         * en 1 las penalizaciones para este deadline y se reduce su salario en
+         * 50
          */
         this.vioAnime = true;
         this.faltasPM += 1;
-        this.faltaLabel.setText(Integer.toString(this.faltasPM*100));
-        this.drive.setSalario(this.drive.getSalario()- (100/1000));
+        this.faltaLabel.setText(Integer.toString(this.faltasPM * 100));
+        this.drive.setSalario(this.drive.getSalario() - (100 / 1000));
     }
 
     public JLabel getFaltaLabel() {
@@ -139,8 +120,5 @@ public class Director extends Thread{
     public void setFaltaLabel(JLabel faltaLabel) {
         this.faltaLabel = faltaLabel;
     }
-    
-    
-    
-}
 
+}

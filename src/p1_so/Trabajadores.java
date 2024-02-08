@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  */
 public class Trabajadores extends Thread {
 
-    private double tipo;
+    private int tipo;
     private double sueldo;
     private double sueldoAcumulado;
     private String empresa;
@@ -26,103 +26,93 @@ public class Trabajadores extends Thread {
     private Semaphore mutex;
     private boolean activo = true;
 
-    public Trabajadores( double tipo, String empresa, int duracionDia, Drive drive, Semaphore mutex) {
- 
+    public Trabajadores(int tipo, String empresa, int duracionDia, Drive drive, Semaphore mutex) {
+
         this.tipo = tipo;
-        this.sueldo = sueldo();
         this.sueldoAcumulado = 0;
         this.empresa = empresa; //nombre de la empresa
+        this.diasParaCompletar = 0;
+        TrabajadoresEspecificaciones();  
         this.drive = drive;
         this.duracionDia = duracionDia;
-        this.produccionDiaria = produccionDiaria();
-        this.diasParaCompletar = 0;
+
         this.mutex = mutex;
     }
-    
+
     @Override
-    public void run(){
-         while(true) {           
+    public void run() {
+        while (true) {
             try {
-                sueldo();
-                produccionDiaria();
-               
-                sleep(this.duracionDia);
+                //Logicamente los desarrolladores siempre trabajan, teoricamente no
+                this.ProduccionCapitulo();
+                
+                this.mutex.acquire();
+                this.drive.sumarSalario(sueldo);
+                this.mutex.release();
+                
+                sleep(this.duracionDia); // hay que despues cambiarlo para que se pueda cambiar la duracion del dia en la interfaz
             } catch (InterruptedException ex) {
-                Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex);
             }
         }
     }
-    
-    public double sueldo(){
-        if (getTipo() == 0) { // guionista
-            return 20;
+
+    private void TrabajadoresEspecificaciones() {
+        if (empresa.equalsIgnoreCase("nickelodeon")) {
+            if (getTipo() == 0) { // guionista
+                this.sueldo = 20;
+                this.diasParaCompletar = 0.26;
+            }
+            if (getTipo() == 1) { //diseñador
+                this.sueldo = 26;
+                this.diasParaCompletar = 0.26;
+            }
+            if (getTipo() == 2) { //animador
+                this.sueldo = 40;
+                this.diasParaCompletar = 1.1;
+            }
+            if (getTipo() == 3) { //doblaje
+                this.sueldo = 16;
+                this.diasParaCompletar = 5;
+            }
+            if (getTipo() == 4) { //guionista plotTwist
+                this.sueldo = 34;
+                this.diasParaCompletar = 0.51;
+            }
+
         }
-        if(getTipo() == 1){ //diseñador
-            return 26;
-        } 
-        if (getTipo() == 2){ //animador
-            return 40;
-        }
-        if(getTipo() ==3){ //doblaje
-            return 16;
-        }
-        if(getTipo() ==4){ //guionista plotTwist
-            return 34;    
-        }
-        else{
-            return -1;
-        }
-    }
-    
-    public double produccionDiaria(){
-        if (getTipo() == 0) { // guionista
-            return 0.26;
-        }
-        if(getTipo() == 1){ //diseñador
-            return 0.26;
-        } 
-        if (getTipo() == 2){ //animador
-            return 1.1;
-        }
-        if(getTipo() ==3){ //doblaje
-            return 5;
-        }
-        if(getTipo() ==4){ //guionista plotTwist
-            return 0.51;    
-        }
-        else{
-            return -1;
+        if (empresa.equalsIgnoreCase("Cartoon network"))//seguir codigo
+        {
         }
     }
-    
-    public double salarioTotal(){
-        double sueldo = getSueldoAcumulado() + getSueldo()*24;
+
+    public double salarioTotal() {
+        double sueldo = getSueldoAcumulado() + getSueldo() * 24;
         setSueldoAcumulado(sueldo);
         return sueldo;
     }
-    
-    public void ProduccionCapitulo(){
+
+    public void ProduccionCapitulo() {
         this.diasParaCompletar += this.produccionDiaria;
-        if(this.diasParaCompletar >= 1){
-            try{
-                int diasAc =  (int) Math.floor(this.diasParaCompletar);
+        if (this.diasParaCompletar >= 1) {
+            try {
+                int diasAc = (int) Math.floor(this.diasParaCompletar);
                 this.mutex.acquire(1);
-                //this.drive.AGGDRIVE(diasAc, this.tipo);
+                this.drive.aggDrive(diasAc, tipo);
                 this.mutex.release();
                 this.diasParaCompletar = 0;
-                
-            }catch(Exception e){
+
+            } catch (Exception e) {
                 System.out.println(e);
             }
         }
     }
 
-
-    public double getTipo() {
+    public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(double tipo) {
+    public void setTipo(int tipo) {
         this.tipo = tipo;
     }
 
@@ -197,8 +187,5 @@ public class Trabajadores extends Thread {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    
 
-
-    
 }

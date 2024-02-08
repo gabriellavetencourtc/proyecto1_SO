@@ -33,7 +33,7 @@ public class Drive {
         this.animacion = 0;
         this.doblaje = 0;
         this.plotwist = 0;
-        this.diasRestantes = 5; //pilas no sabemos pq hay un 5 ahi
+        this.diasRestantes = 10; //pilas no sabemos pq hay un 5 ahi
         this.deadline = 0;
         this.capitulo = 0;
         this.capituloPlotTwist = 0;
