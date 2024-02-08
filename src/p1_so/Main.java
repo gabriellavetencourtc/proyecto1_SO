@@ -4,17 +4,85 @@
  */
 package p1_so;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author gabriellavetencourt
  */
 public class Main extends javax.swing.JFrame {
-
+    
+        Empresa Nickelodeon = new Empresa(19, "Nickelodeon");
+        Nickelodeon nick = new Nickelodeon();
+        
+        int duracionDia;
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        
+         //Se pasan los labels correspondientes a cada compañia y sus drives para manipular la interfaz        
+        
+        
+        JLabel[] NickDriveLabels = {nick.getDriveGuiones(), nick.getDriveEscensarios(), nick.getDriveAnimaciones(), nick.getDriveDoblajes(), nick.getDrivePlot(), nick.getDeadline(), nick.getCapitulos(), nick.getCapitulosPT(), nick.getDiastrans()};
+        JLabel[] NickLabels = {TrabajadoresNick, GuionistasNick, DisenadoresNick, AnimadorNick, ActoresNick, GuioPlotNick, EnsambladoresNick, nick.getIngresosNick(), nick.getUtilidadNick(), nick.getEgresosNick()};
+//        DevQty2, NarrativeQty2, LevelQty2, SpriteQty2, LogicQty2, DLCQty2, IntegratorQty2,
+        
+//        JLabel[] StarChannelDriveLabels = {narrativeqtyGUI1, levelqtyGUI1, spriteqtyGUI1, logicqtyGUI2, dlcqtyGUI1, DeadlineGUI1, readygamesqtyGUI1, readydlcGUI1, dayspassedGUI2};  
+//        JLabel[] StarChannelLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
+//        
+//        JLabel[] CartoonDriveLabels = {narrativeqtyGUI1, levelqtyGUI1, spriteqtyGUI1, logicqtyGUI2, dlcqtyGUI1, DeadlineGUI1, readygamesqtyGUI1, readydlcGUI1, dayspassedGUI2};  
+//        JLabel[] CartoonLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
+//        
+        this.Nickelodeon.getDrive().setLabels(NickDriveLabels);
+        this.Nickelodeon.setLabels(NickLabels);
+//        this.Nickelodeon.getCompanyDrive().setLabels(NickDriveLabels);
+        
+
+//        
+//        this.squareEnix.getCompanyDrive().setLabels(CartoonDriveLabels);
+//        this.squareEnix.setLabels(CartoonLabels);
+        this.DuracionDia.setText(Integer.toString(duracionDia));
+        
+       
+    //Lectura de la configuracion guardada en txt 
+//        readConfig();
+        
+    //Se refleja la lectura la lectura de desarrolladores maximos de cada compañia    
+        TrabajadoresNick.setText(Integer.toString(this.Nickelodeon.getCantTrabajadores()));
+//        maxDevsGUI1.setText(Integer.toString(this.squareEnix.getMaxDevs()));
+        
+    //Conversion de hora y minutos   
+        int duracionHora = duracionDia/24;
+        int duracionMin = duracionHora/60;
+        if(duracionHora == 0){
+            duracionHora = 1;
+        }
+        if(duracionMin == 0){
+            duracionMin = 1;
+        }
+ 
+
+    //Se crea e inicializan los directores y pms de cada compañia
+        ProjectManager nickPM = new ProjectManager( this.duracionDia, duracionHora, duracionMin,this.Nickelodeon.getDrive(),this.Nickelodeon.getMutex(), nick.getPMestado());
+        Director Nickdir = new Director(this.capcom.getCompanyDrive(), this.capcom.getMutex(), nickPM, duracionMin, PMfaultsGUI, PMfaults$GUI);
+        RevisionPM NickRevPM = new RevisionPM( this.dayDuration, duracionHora, duracionMin, Nickdir, directorstateGUI, this.capcom);
+
+        
+//        ProjectManager squareMan = new ProjectManager(this.dayDuration, duracionHora, duracionMin, this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), PMstateGUI1);
+//        Director squareDir = new Director(this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), squareMan, duracionMin, PMfaultsGUI1, PMfaults$GUI1);
+//        RevisionPM squareWatch = new RevisionPM(this.dayDuration, duracionHora, duracionMin, squareDir, directorstateGUI1,this.squareEnix);
+//        
+//        
+        nickPM.start();
+        Nickdir.start();
+        NickRevPM.start();
+        
+//        squareMan.start();
+//        squareDir.start();
+//        squareWatch.start();
+//        
     }
     
     
@@ -84,7 +152,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel8.setText("Ensambladores");
 
-        TrabajadoresNick.setText("1");
+        TrabajadoresNick.setText("0");
 
         GuionistasNick.setText("0");
 

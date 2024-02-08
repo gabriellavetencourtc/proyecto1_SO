@@ -4,6 +4,8 @@
  */
 package p1_so;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author gabriellavetencourt
@@ -55,6 +57,14 @@ public class Nickelodeon extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        deadline = new javax.swing.JLabel();
+        capitulos = new javax.swing.JLabel();
+        capitulosPT = new javax.swing.JLabel();
+        diastrans = new javax.swing.JLabel();
+        UtilidadNick = new javax.swing.JLabel();
+        EgresosNick = new javax.swing.JLabel();
+        IngresosNick = new javax.swing.JLabel();
+        PMestado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,6 +124,22 @@ public class Nickelodeon extends javax.swing.JFrame {
 
         jLabel23.setText("Capítulos con PlotTwist:");
 
+        deadline.setText("0");
+
+        capitulos.setText("0");
+
+        capitulosPT.setText("0");
+
+        diastrans.setText("0");
+
+        UtilidadNick.setText("0");
+
+        EgresosNick.setText("0");
+
+        IngresosNick.setText("0");
+
+        PMestado.setText("jLabel24");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -130,16 +156,34 @@ public class Nickelodeon extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel5))
-                                .addGap(163, 163, 163)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(IngresosNick))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(EgresosNick))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(UtilidadNick))
+                                    .addComponent(jLabel5)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(diastrans))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(PMestado, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,12 +205,18 @@ public class Nickelodeon extends javax.swing.JFrame {
                                                     .addComponent(DriveDoblajes)
                                                     .addComponent(DrivePlot)))))
                                     .addComponent(jLabel21)
-                                    .addComponent(jLabel22)
-                                    .addComponent(jLabel23)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel22)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(capitulos))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel23)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(capitulosPT))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(220, 220, 220)
                         .addComponent(jLabel1)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                     .addContainerGap(480, Short.MAX_VALUE)
@@ -188,24 +238,31 @@ public class Nickelodeon extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel14)
                         .addComponent(jLabel20)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(PMestado))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(diastrans))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(deadline))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel9)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(IngresosNick)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(DriveGuiones))
@@ -229,15 +286,23 @@ public class Nickelodeon extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(45, 45, 45)
-                                .addComponent(jLabel23))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel23)
+                                    .addComponent(capitulosPT)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel21)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel22)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel22)
+                                    .addComponent(capitulos))))))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(EgresosNick))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(UtilidadNick))
                 .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -284,6 +349,119 @@ public class Nickelodeon extends javax.swing.JFrame {
         });
     }
 
+    public JLabel getPMestado() {
+        return PMestado;
+    }
+
+    public void setPMestado(JLabel PMestado) {
+        this.PMestado = PMestado;
+    }
+
+    public JLabel getEgresosNick() {
+        return EgresosNick;
+    }
+
+    public void setEgresosNick(JLabel EgresosNick) {
+        this.EgresosNick = EgresosNick;
+    }
+
+    public JLabel getIngresosNick() {
+        return IngresosNick;
+    }
+
+    public void setIngresosNick(JLabel IngresosNick) {
+        this.IngresosNick = IngresosNick;
+    }
+
+    public JLabel getUtilidadNick() {
+        return UtilidadNick;
+    }
+
+    public void setUtilidadNick(JLabel UtilidadNick) {
+        this.UtilidadNick = UtilidadNick;
+    }
+
+    public JLabel getDiastrans() {
+        return diastrans;
+    }
+
+    public void setDiastrans(JLabel diastrans) {
+        this.diastrans = diastrans;
+    }
+
+    public JLabel getCapitulos() {
+        return capitulos;
+    }
+
+    public void setCapitulos(JLabel capitulos) {
+        this.capitulos = capitulos;
+    }
+
+    public JLabel getCapitulosPT() {
+        return capitulosPT;
+    }
+
+    public void setCapitulosPT(JLabel capitulosPT) {
+        this.capitulosPT = capitulosPT;
+    }
+
+    public JLabel getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(JLabel deadline) {
+        this.deadline = deadline;
+    }
+
+    public JLabel getDriveAnimaciones() {
+        return DriveAnimaciones;
+    }
+
+    public void setDriveAnimaciones(JLabel DriveAnimaciones) {
+        this.DriveAnimaciones = DriveAnimaciones;
+    }
+
+    public JLabel getDriveDoblajes() {
+        return DriveDoblajes;
+    }
+
+    public void setDriveDoblajes(JLabel DriveDoblajes) {
+        this.DriveDoblajes = DriveDoblajes;
+    }
+
+    public JLabel getDriveEscensarios() {
+        return DriveEscensarios;
+    }
+
+    public void setDriveEscensarios(JLabel DriveEscensarios) {
+        this.DriveEscensarios = DriveEscensarios;
+    }
+
+    public JLabel getDriveGuiones() {
+        return DriveGuiones;
+    }
+
+    public void setDriveGuiones(JLabel DriveGuiones) {
+        this.DriveGuiones = DriveGuiones;
+    }
+
+    public JLabel getDriveGuiones6() {
+        return DriveGuiones6;
+    }
+
+    public void setDriveGuiones6(JLabel DriveGuiones6) {
+        this.DriveGuiones6 = DriveGuiones6;
+    }
+
+    public JLabel getDrivePlot() {
+        return DrivePlot;
+    }
+
+    public void setDrivePlot(JLabel DrivePlot) {
+        this.DrivePlot = DrivePlot;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DriveAnimaciones;
     private javax.swing.JLabel DriveDoblajes;
@@ -291,6 +469,14 @@ public class Nickelodeon extends javax.swing.JFrame {
     private javax.swing.JLabel DriveGuiones;
     private javax.swing.JLabel DriveGuiones6;
     private javax.swing.JLabel DrivePlot;
+    private javax.swing.JLabel EgresosNick;
+    private javax.swing.JLabel IngresosNick;
+    private javax.swing.JLabel PMestado;
+    private javax.swing.JLabel UtilidadNick;
+    private javax.swing.JLabel capitulos;
+    private javax.swing.JLabel capitulosPT;
+    private javax.swing.JLabel deadline;
+    private javax.swing.JLabel diastrans;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
