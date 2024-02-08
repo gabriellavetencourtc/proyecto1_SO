@@ -5,6 +5,7 @@
 package p1_so;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -83,10 +84,19 @@ public class Main extends javax.swing.JFrame {
 //        squareMan.start();
 //        squareDir.start();
 //        squareWatch.start();
-//        
+//   
 
+    
     }
     
+    public void MaxErrorTrab(){
+        JOptionPane.showMessageDialog(null, "Máximo de trabajadores alcanzado, disminuya la cantidad!");
+    }
+     
+    public void minErrorTrab(){
+        JOptionPane.showMessageDialog(null, "No es posible disminuir la cantidad de trabajadores.");
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -129,11 +139,14 @@ public class Main extends javax.swing.JFrame {
         DuracionDia = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        deadline = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
+        salir = new javax.swing.JButton();
+        masDeadline = new javax.swing.JButton();
+        deadline = new javax.swing.JLabel();
+        menosDeadline = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -264,31 +277,33 @@ public class Main extends javax.swing.JFrame {
         jTabbedPane1.addTab("Inicio", jTabbedPane2);
         jTabbedPane1.addTab("Nickelodeon", jTabbedPane3);
 
+        salir.setText("Salir");
+        salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salirActionPerformed(evt);
+            }
+        });
+
+        masDeadline.setText("+");
+        masDeadline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masDeadlineActionPerformed(evt);
+            }
+        });
+
+        deadline.setText("0");
+
+        menosDeadline.setText("-");
+        menosDeadline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menosDeadlineActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 269, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(18, 18, 18)
-                                .addComponent(DuracionDia, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel13)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(jLabel9)))
-                .addGap(251, 251, 251))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -342,9 +357,41 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(MasEnsambladoresNick))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(113, 113, 113)
-                        .addComponent(jLabel1))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 213, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(108, 108, 108)
+                                .addComponent(jLabel9))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(18, 18, 18)
+                                .addComponent(DuracionDia, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(menosDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(masDeadline)))))
+                        .addGap(306, 306, 306))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(salir)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(deadline, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel13)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,9 +449,13 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(deadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addGap(31, 31, 31))
+                    .addComponent(masDeadline)
+                    .addComponent(deadline)
+                    .addComponent(jLabel13)
+                    .addComponent(menosDeadline))
+                .addGap(2, 2, 2)
+                .addComponent(salir)
+                .addContainerGap())
         );
 
         pack();
@@ -412,51 +463,121 @@ public class Main extends javax.swing.JFrame {
 
     private void MenosGuionistasNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuionistasNickActionPerformed
         // TODO add your handling code here:
+        if(this.Nickelodeon.getGuionistas().getSize() > 1){
+            this.Nickelodeon.eliminarTrabajador(1);
+        }else{
+            minErrorTrab();
+        }  
     }//GEN-LAST:event_MenosGuionistasNickActionPerformed
 
     private void MenosDisenadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosDisenadorNickActionPerformed
         // TODO add your handling code here:
+        if(this.Nickelodeon.getDisenadores().getSize() > 1){
+            this.Nickelodeon.eliminarTrabajador(1);
+        }else{
+            minErrorTrab();
+        }   
     }//GEN-LAST:event_MenosDisenadorNickActionPerformed
 
     private void MenosAnimadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosAnimadorNickActionPerformed
         // TODO add your handling code here:
+         if(this.Nickelodeon.getAnimadores().getSize() > 1){
+            this.Nickelodeon.eliminarTrabajador(1);
+        }else{
+            minErrorTrab();
+        }
     }//GEN-LAST:event_MenosAnimadorNickActionPerformed
 
     private void MenosActoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActoresNickActionPerformed
         // TODO add your handling code here:
+         if(this.Nickelodeon.getActores().getSize() > 1){
+            this.Nickelodeon.eliminarTrabajador(1);
+        }else{
+            minErrorTrab();
+        }
     }//GEN-LAST:event_MenosActoresNickActionPerformed
 
     private void MenosGuioPlotNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuioPlotNickActionPerformed
         // TODO add your handling code here:
+         if(this.Nickelodeon.getGuionistasPT().getSize() > 1){
+            this.Nickelodeon.eliminarTrabajador(1);
+        }else{
+            minErrorTrab();
+        }
     }//GEN-LAST:event_MenosGuioPlotNickActionPerformed
 
     private void MenosEnsambladoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosEnsambladoresNickActionPerformed
         // TODO add your handling code here:
+         if(this.Nickelodeon.getEnsambladores().getSize() > 1){
+            this.Nickelodeon.eliminarTrabajador(1);
+        }else{
+            minErrorTrab();
+        }
     }//GEN-LAST:event_MenosEnsambladoresNickActionPerformed
 
     private void MasGuionistaNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasGuionistaNickActionPerformed
         // TODO add your handling code here:
+       Trabajadores nickt1 = new Trabajadores(0, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
+        Nickelodeon.AggTrabajador(nickt1);
     }//GEN-LAST:event_MasGuionistaNickActionPerformed
 
     private void MasAnimadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasAnimadorNickActionPerformed
         // TODO add your handling code here:
+        Trabajadores nickt1 = new Trabajadores(2, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
+        Nickelodeon.AggTrabajador(nickt1);
+         
     }//GEN-LAST:event_MasAnimadorNickActionPerformed
 
     private void MasDisenadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasDisenadorNickActionPerformed
         // TODO add your handling code here:
+        Trabajadores nickt1 = new Trabajadores(1, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
+        Nickelodeon.AggTrabajador(nickt1);                         
     }//GEN-LAST:event_MasDisenadorNickActionPerformed
 
     private void MasActorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActorNickActionPerformed
         // TODO add your handling code here:
+        Trabajadores nickt1 = new Trabajadores(3, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
+        Nickelodeon.AggTrabajador(nickt1);
     }//GEN-LAST:event_MasActorNickActionPerformed
 
     private void MasGuioPlotNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasGuioPlotNickActionPerformed
         // TODO add your handling code here:
+        Trabajadores nickt1 = new Trabajadores(4, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
+        Nickelodeon.AggTrabajador(nickt1);
     }//GEN-LAST:event_MasGuioPlotNickActionPerformed
 
     private void MasEnsambladoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasEnsambladoresNickActionPerformed
         // TODO add your handling code here:
+        Ensamblador nicke1 = new Ensamblador( Nickelodeon.getDrive(), Nickelodeon.getMutex(), duracionDia);
+        Nickelodeon.AggEnsamblador(nicke1);
     }//GEN-LAST:event_MasEnsambladoresNickActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_salirActionPerformed
+
+    private void menosDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menosDeadlineActionPerformed
+        // TODO add your handling code here:
+        int deadlineActual = Nickelodeon.getDrive().getDeadline();
+        if (deadlineActual > 1) {
+            deadlineActual--;
+            Nickelodeon.getDrive().setDeadline(deadlineActual);
+//            squareEnix.getCompanyDrive().setDeadLine(deadlineActual);
+                    this.deadline.setText(Integer.toString(deadlineActual));
+
+        }
+    }//GEN-LAST:event_menosDeadlineActionPerformed
+
+    private void masDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masDeadlineActionPerformed
+        // TODO add your handling code here:
+        int deadlineActual = Nickelodeon.getDrive().getDeadline(); 
+        deadlineActual++;
+        Nickelodeon.getDrive().setDeadline(deadlineActual);
+//        squareEnix.getCompanyDrive().setDeadLine(deadlineActual);
+        
+        this.deadline.setText(Integer.toString(deadlineActual));
+    }//GEN-LAST:event_masDeadlineActionPerformed
 
     /**
      * @param args the command line arguments
@@ -514,7 +635,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton MenosGuioPlotNick;
     private javax.swing.JButton MenosGuionistasNick;
     private javax.swing.JLabel TrabajadoresNick;
-    private javax.swing.JTextField deadline;
+    private javax.swing.JLabel deadline;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -531,5 +652,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JButton masDeadline;
+    private javax.swing.JButton menosDeadline;
+    private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
 }

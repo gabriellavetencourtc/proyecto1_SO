@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @author gabriellavetencourt
  */
 public class Trabajadores extends Thread {
-    private String nombre;
+
     private double tipo;
     private double sueldo;
     private double sueldoAcumulado;
@@ -26,8 +26,8 @@ public class Trabajadores extends Thread {
     private Semaphore mutex;
     private boolean activo = true;
 
-    public Trabajadores(String nombre, double tipo, String empresa, Drive drive, int duracionDia, float produccionDiaria, float diasParaCompletar, Semaphore mutex) {
-        this.nombre = nombre;
+    public Trabajadores( double tipo, String empresa, int duracionDia, Drive drive, Semaphore mutex) {
+ 
         this.tipo = tipo;
         this.sueldo = sueldo();
         this.sueldoAcumulado = 0;
@@ -45,7 +45,7 @@ public class Trabajadores extends Thread {
             try {
                 sueldo();
                 produccionDiaria();
-                System.out.println("Trabajador: "+ this.nombre + " gana: "+ salarioTotal() +"$");
+               
                 sleep(this.duracionDia);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
@@ -117,13 +117,6 @@ public class Trabajadores extends Thread {
         }
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public double getTipo() {
         return tipo;
