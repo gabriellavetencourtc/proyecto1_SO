@@ -66,8 +66,8 @@ public class Main extends javax.swing.JFrame {
 
     //Se crea e inicializan los directores y pms de cada compañia
         ProjectManager nickPM = new ProjectManager( this.duracionDia, duracionHora, duracionMin,this.Nickelodeon.getDrive(),this.Nickelodeon.getMutex(), nick.getPMestado());
-        Director Nickdir = new Director(this.capcom.getCompanyDrive(), this.capcom.getMutex(), nickPM, duracionMin, PMfaultsGUI, PMfaults$GUI);
-        RevisionPM NickRevPM = new RevisionPM( this.dayDuration, duracionHora, duracionMin, Nickdir, directorstateGUI, this.capcom);
+        Director Nickdir = new Director(this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), nickPM, duracionMin, nick.getPMfaltas());
+        RevisionPM NickRevPM = new RevisionPM( this.duracionDia, duracionHora, duracionMin, Nickdir, nick.getDirEstado(), this.Nickelodeon);
 
         
 //        ProjectManager squareMan = new ProjectManager(this.dayDuration, duracionHora, duracionMin, this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), PMstateGUI1);

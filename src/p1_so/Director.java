@@ -24,10 +24,9 @@ public class Director extends Thread{
     private int duracionMin;
     private boolean vioAnime;
     private int faltasPM;
-    private JLabel label;
     private JLabel faltaLabel;
     
-    public Director(Drive drive, Semaphore m, ProjectManager proj, int min, JLabel label, JLabel falta){
+    public Director(Drive drive, Semaphore m, ProjectManager proj, int min, JLabel falta){
         this.drive = drive;
         this.salario = 0;
         this.mutex = m;
@@ -36,7 +35,6 @@ public class Director extends Thread{
         this.pausa = false;
         this.vioAnime = false;
         this.faltasPM = 0;
-        this.label = label;
         this.faltaLabel = falta;
     }
     
@@ -130,8 +128,7 @@ public class Director extends Thread{
          */
         this.vioAnime = true;
         this.faltasPM += 1;
-        this.label.setText(Integer.toString(this.faltasPM));
-        this.faltaLabel.setText(Integer.toString(this.faltasPM*50));
+        this.faltaLabel.setText(Integer.toString(this.faltasPM*100));
         this.drive.setSalario(this.drive.getSalario()- (100/1000));
     }
 
