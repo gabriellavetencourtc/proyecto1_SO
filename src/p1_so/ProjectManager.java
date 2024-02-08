@@ -38,39 +38,14 @@ public class ProjectManager extends Thread {
         this.label = label;
     }
     
-    /**
-     * Funcion para el pm ver anime las primeras 16 horas del dia
-     * 
-     * Utiliza un para repetir el proceso cada hora
-     * 
-     * primero trabaja media hora, luego ve anime media hora
-     */
-    public void animeTime() {
-        for (int i = 1; i <= 16; i++){
-            try {
-                this.estadoActual = watchAnime();
-                this.label.setText(this.estadoActual);
-                sleep(this.duracionHora/2);  
-                
-                 
-                this.estadoActual = "Trabajando";
-                this.label.setText(this.estadoActual);
-                sleep(this.duracionHora/2);
-                
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ProjectManager.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                    
-                }
-}
-    public void ejecutar(){
+       @Override
+    public void run(){
         while(true){
             try{
-                //Al iniciar el dia, inicia su rutina de trabajar y alternar anime
+                //Al iniciar el dia, inicia su rutina de trabajar y alternar streams
                 animeTime();                
                 /*Segun el tiempo que pasa viendo streams, espera el resto para el siguiente dia y baja en 1 el contador
                 de dias restantes*/
-                //Hay 32 intervalos de 30 minutos en 16 horas
                 if (((this.duracionHora/2)*32) + (this.duracionHora*8) < this.duracionDia){
                     sleep((this.duracionHora*8) + (this.duracionDia - (((this.duracionHora/2)*32) + (this.duracionHora*8))));
                     this.mutex.acquire(1);
@@ -92,11 +67,28 @@ public class ProjectManager extends Thread {
         }
     }
     
-    /**Esta funcion es solo por entretenimiento PODEMOS QUITARLA PERO CAPAZ NOS DA ALGUN PUNTO EXTRA 
- 
- Utilizando un numero aleatorio, determina que anime esta viendo el pm porque tiene variedad
-     * 
-     */
+    
+
+    public void animeTime() {
+        for (int i = 1; i <= 16; i++){
+            try {
+                this.estadoActual = watchAnime();
+                this.label.setText(this.estadoActual);
+                sleep(this.duracionHora/2);  
+                
+                 
+                this.estadoActual = "Trabajando";
+                this.label.setText(this.estadoActual);
+                sleep(this.duracionHora/2);
+                
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ProjectManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                    
+                }
+}
+
+    
     public String watchAnime(){
         String anime = "";
         Random random = new Random();

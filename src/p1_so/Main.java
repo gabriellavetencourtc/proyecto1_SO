@@ -13,90 +13,84 @@ import javax.swing.JOptionPane;
  */
 public class Main extends javax.swing.JFrame {
 
-        Empresa Nickelodeon = new Empresa(17, "Nickelodeon"); //19 con PM y Dir
-        Nickelodeon nick = new Nickelodeon();
-        
-        int duracionDia = 3000;
+    Empresa Nickelodeon = new Empresa(17, "Nickelodeon"); //19 con PM y Dir
+    Nickelodeon nick = new Nickelodeon();
+
+    int duracionDia = 5000;
+
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
 
-        
-         //Se pasan los labels correspondientes a cada compañia y sus drives para manipular la interfaz        
-        
-        
+        //Se pasan los labels correspondientes a cada compañia y sus drives para manipular la interfaz        
         JLabel[] NickDriveLabels = {nick.getDriveGuiones(), nick.getDriveEscensarios(), nick.getDriveAnimaciones(), nick.getDriveDoblajes(), nick.getDrivePlot(), nick.getDeadline(), nick.getCapitulos(), nick.getCapitulosPT(), nick.getDiastrans()};
         JLabel[] NickLabels = {TrabajadoresNick, GuionistasNick, DisenadoresNick, AnimadorNick, ActoresNick, GuioPlotNick, EnsambladoresNick, nick.getIngresosNick(), nick.getUtilidadNick(), nick.getEgresosNick()};
 //        DevQty2, NarrativeQty2, LevelQty2, SpriteQty2, LogicQty2, DLCQty2, IntegratorQty2,
-        
+
 //        JLabel[] StarChannelDriveLabels = {narrativeqtyGUI1, levelqtyGUI1, spriteqtyGUI1, logicqtyGUI2, dlcqtyGUI1, DeadlineGUI1, readygamesqtyGUI1, readydlcGUI1, dayspassedGUI2};  
 //        JLabel[] StarChannelLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
 //        
 //        JLabel[] CartoonDriveLabels = {narrativeqtyGUI1, levelqtyGUI1, spriteqtyGUI1, logicqtyGUI2, dlcqtyGUI1, DeadlineGUI1, readygamesqtyGUI1, readydlcGUI1, dayspassedGUI2};  
 //        JLabel[] CartoonLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
-//        
+//      
+
+        deadline.setText("10");
         this.Nickelodeon.getDrive().setLabels(NickDriveLabels);
         this.Nickelodeon.setLabels(NickLabels);
 //        this.Nickelodeon.getCompanyDrive().setLabels(NickDriveLabels);
-        
 
 //        
 //        this.squareEnix.getCompanyDrive().setLabels(CartoonDriveLabels);
 //        this.squareEnix.setLabels(CartoonLabels);
         this.DuracionDiaTF.setText(Integer.toString(duracionDia));
-        
-       
-    //Lectura de la configuracion guardada en txt 
+
+        //Lectura de la configuracion guardada en txt 
 //        readConfig();
-        
-    //Se refleja la lectura la lectura de desarrolladores maximos de cada compañia    
+        //Se refleja la lectura la lectura de desarrolladores maximos de cada compañia    
         TrabajadoresNick.setText(Integer.toString(this.Nickelodeon.getCantTrabajadores()));
 //        maxDevsGUI1.setText(Integer.toString(this.squareEnix.getMaxDevs()));
-        
-    //Conversion de hora y minutos   
-        int duracionHora = duracionDia/24;
-        int duracionMin = duracionHora/60;
-        if(duracionHora == 0){
+
+        //Conversion de hora y minutos   
+        int duracionHora = duracionDia / 24;
+        int duracionMin = duracionHora / 60;
+        if (duracionHora == 0) {
             duracionHora = 1;
         }
-        if(duracionMin == 0){
+        if (duracionMin == 0) {
             duracionMin = 1;
         }
- 
 
-    //Se crea e inicializan los directores y pms de cada compañia
-        ProjectManager nickPM = new ProjectManager( this.duracionDia, duracionHora, duracionMin,this.Nickelodeon.getDrive(),this.Nickelodeon.getMutex(), nick.getPMestado());
+        //Se crea e inicializan los directores y pms de cada compañia
+        ProjectManager nickPM = new ProjectManager(this.duracionDia, duracionHora, duracionMin, this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), nick.getPMestado());
         Director Nickdir = new Director(this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), nickPM, duracionMin, nick.getPMfaltas());
-        RevisionPM NickRevPM = new RevisionPM( this.duracionDia, duracionHora, duracionMin, Nickdir, nick.getDirEstado(), this.Nickelodeon);
+        RevisionPM NickRevPM = new RevisionPM(this.duracionDia, duracionHora, duracionMin, Nickdir, nick.getDirEstado(), this.Nickelodeon);
 
-        
 //        ProjectManager squareMan = new ProjectManager(this.dayDuration, duracionHora, duracionMin, this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), PMstateGUI1);
 //        Director squareDir = new Director(this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), squareMan, duracionMin, PMfaultsGUI1, PMfaults$GUI1);
 //        RevisionPM squareWatch = new RevisionPM(this.dayDuration, duracionHora, duracionMin, squareDir, directorstateGUI1,this.squareEnix);
 //        
-//        
-        nickPM.start();
+//      
+        
+        nickPM.start();       
         Nickdir.start();
         NickRevPM.start();
-        
+
+
 //        squareMan.start();
 //        squareDir.start();
 //        squareWatch.start();
 //   
-
-    
     }
-    
-    public void MaxErrorTrab(){
+
+    public void MaxErrorTrab() {
         JOptionPane.showMessageDialog(null, "Máximo de trabajadores alcanzado, disminuya la cantidad!");
     }
-     
-    public void minErrorTrab(){
+
+    public void minErrorTrab() {
         JOptionPane.showMessageDialog(null, "No es posible disminuir la cantidad de trabajadores.");
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -339,9 +333,9 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(menosDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(menosDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(masDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(masDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel11)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel12)
@@ -400,13 +394,14 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(MenosGuionistasNick)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(MasGuionistaNick))
-                            .addComponent(TrabajadoresNick)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(EnsambladoresNick)
                                 .addGap(18, 18, 18)
                                 .addComponent(MenosEnsambladoresNick)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(MasEnsambladoresNick))))
+                                .addComponent(MasEnsambladoresNick))
+                            .addComponent(TrabajadoresNick))
+                        .addGap(127, 127, 127))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(jLabel1)))
@@ -489,61 +484,61 @@ public class Main extends javax.swing.JFrame {
 
     private void MenosGuionistasNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuionistasNickActionPerformed
         // TODO add your handling code here:
-        if(this.Nickelodeon.getGuionistas().getSize() > 1){
+        if (this.Nickelodeon.getGuionistas().getSize() > 1) {
             this.Nickelodeon.eliminarTrabajador(0);
-        }else{
+        } else {
             minErrorTrab();
-        }  
+        }
     }//GEN-LAST:event_MenosGuionistasNickActionPerformed
 
     private void MenosDisenadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosDisenadorNickActionPerformed
         // TODO add your handling code here:
-        if(this.Nickelodeon.getDisenadores().getSize() > 1){
+        if (this.Nickelodeon.getDisenadores().getSize() > 1) {
             this.Nickelodeon.eliminarTrabajador(1);
-        }else{
+        } else {
             minErrorTrab();
-        }   
+        }
     }//GEN-LAST:event_MenosDisenadorNickActionPerformed
 
     private void MenosAnimadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosAnimadorNickActionPerformed
         // TODO add your handling code here:
-         if(this.Nickelodeon.getAnimadores().getSize() > 1){
+        if (this.Nickelodeon.getAnimadores().getSize() > 1) {
             this.Nickelodeon.eliminarTrabajador(2);
-        }else{
+        } else {
             minErrorTrab();
         }
     }//GEN-LAST:event_MenosAnimadorNickActionPerformed
 
     private void MenosActoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActoresNickActionPerformed
         // TODO add your handling code here:
-         if(this.Nickelodeon.getActores().getSize() > 1){
+        if (this.Nickelodeon.getActores().getSize() > 1) {
             this.Nickelodeon.eliminarTrabajador(3);
-        }else{
+        } else {
             minErrorTrab();
         }
     }//GEN-LAST:event_MenosActoresNickActionPerformed
 
     private void MenosGuioPlotNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuioPlotNickActionPerformed
         // TODO add your handling code here:
-         if(this.Nickelodeon.getGuionistasPT().getSize() > 1){
+        if (this.Nickelodeon.getGuionistasPT().getSize() > 1) {
             this.Nickelodeon.eliminarTrabajador(4);
-        }else{
+        } else {
             minErrorTrab();
         }
     }//GEN-LAST:event_MenosGuioPlotNickActionPerformed
 
     private void MenosEnsambladoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosEnsambladoresNickActionPerformed
         // TODO add your handling code here:
-         if(this.Nickelodeon.getEnsambladores().getSize() > 1){
+        if (this.Nickelodeon.getEnsambladores().getSize() > 1) {
             this.Nickelodeon.borrarEnsamblador();
-        }else{
+        } else {
             minErrorTrab();
         }
     }//GEN-LAST:event_MenosEnsambladoresNickActionPerformed
 
     private void MasGuionistaNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasGuionistaNickActionPerformed
         // TODO add your handling code here:
-       Trabajadores nickt1 = new Trabajadores(0, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
+        Trabajadores nickt1 = new Trabajadores(0, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
         Nickelodeon.AggTrabajador(nickt1);
     }//GEN-LAST:event_MasGuionistaNickActionPerformed
 
@@ -551,13 +546,13 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         Trabajadores nickt1 = new Trabajadores(2, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
         Nickelodeon.AggTrabajador(nickt1);
-         
+
     }//GEN-LAST:event_MasAnimadorNickActionPerformed
 
     private void MasDisenadorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasDisenadorNickActionPerformed
         // TODO add your handling code here:
         Trabajadores nickt1 = new Trabajadores(1, "Nickelodeon", duracionDia, Nickelodeon.getDrive(), Nickelodeon.getMutex());
-        Nickelodeon.AggTrabajador(nickt1);                         
+        Nickelodeon.AggTrabajador(nickt1);
     }//GEN-LAST:event_MasDisenadorNickActionPerformed
 
     private void MasActorNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActorNickActionPerformed
@@ -574,7 +569,7 @@ public class Main extends javax.swing.JFrame {
 
     private void MasEnsambladoresNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasEnsambladoresNickActionPerformed
         // TODO add your handling code here:
-        Ensamblador nicke1 = new Ensamblador( Nickelodeon.getDrive(), Nickelodeon.getMutex(), duracionDia);
+        Ensamblador nicke1 = new Ensamblador(Nickelodeon.getDrive(), Nickelodeon.getMutex(), duracionDia);
         Nickelodeon.AggEnsamblador(nicke1);
     }//GEN-LAST:event_MasEnsambladoresNickActionPerformed
 
@@ -590,18 +585,18 @@ public class Main extends javax.swing.JFrame {
             deadlineActual--;
             Nickelodeon.getDrive().setDeadline(deadlineActual);
 //            squareEnix.getCompanyDrive().setDeadLine(deadlineActual);
-                    this.deadline.setText(Integer.toString(deadlineActual));
+            this.deadline.setText(Integer.toString(deadlineActual));
 
         }
     }//GEN-LAST:event_menosDeadlineActionPerformed
 
     private void masDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masDeadlineActionPerformed
         // TODO add your handling code here:
-        int deadlineActual = Nickelodeon.getDrive().getDeadline(); 
+        int deadlineActual = Nickelodeon.getDrive().getDeadline();
         deadlineActual++;
         Nickelodeon.getDrive().setDeadline(deadlineActual);
 //        squareEnix.getCompanyDrive().setDeadLine(deadlineActual);
-        
+
         this.deadline.setText(Integer.toString(deadlineActual));
     }//GEN-LAST:event_masDeadlineActionPerformed
 
@@ -616,8 +611,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void mostrarNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNickActionPerformed
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:        
         nick.setVisible(true);
     }//GEN-LAST:event_mostrarNickActionPerformed
 

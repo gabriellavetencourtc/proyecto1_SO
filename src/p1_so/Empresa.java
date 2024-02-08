@@ -52,7 +52,7 @@ public class Empresa {
     }
     
 
-    //CREO Q HAY UNOS LABELS EXTRA PENSANDO EN COMO ERA SU INTERFAZ
+
     public void AggTrabajador(Trabajadores t) {
         if ((this.guionistas.getSize()
                 + this.disenadores.getSize()
@@ -116,7 +116,6 @@ public class Empresa {
             
             auxTrabajadores = Trabajadores.class.cast(aux.getData());
             auxTrabajadores.setActivo(false);
-
             
         }
         if (tipo == 1) { //disenadores
@@ -166,7 +165,7 @@ public class Empresa {
                     + this.animadores.getSize() + this.actores.getSize() + this.guionistasPT.getSize()
                     + this.ensambladores.getSize());
 
-            this.labels[0].setText(Integer.toString(TrabajadoresDisponibles));
+        this.labels[0].setText(Integer.toString(TrabajadoresDisponibles+1));
        
     }
 
@@ -214,17 +213,17 @@ public class Empresa {
 
     public void setUtilidad(double utilidad) {
         this.utilidad = utilidad;
-        this.labels[15].setText(Double.toString(this.utilidad));
+        this.labels[9].setText(Double.toString(this.utilidad));
     }
 
     public void sumSalario(double salario) {
         this.salario += salario;
-        this.labels[16].setText(Double.toString(this.salario));
+        this.labels[10].setText(Double.toString(this.salario));
     }
 
     public void sumIngreso(double ingreso) {
         this.ingresos += ingreso;
-        this.labels[14].setText(Double.toString(this.ingresos));
+        this.labels[8].setText(Double.toString(this.ingresos));
     }
 
     public void limiteTrabajadores() {
