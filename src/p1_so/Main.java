@@ -11,7 +11,7 @@ import javax.swing.JLabel;
  * @author gabriellavetencourt
  */
 public class Main extends javax.swing.JFrame {
-    
+
         Empresa Nickelodeon = new Empresa(19, "Nickelodeon");
         Nickelodeon nick = new Nickelodeon();
         
@@ -21,6 +21,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+
         
          //Se pasan los labels correspondientes a cada compañia y sus drives para manipular la interfaz        
         
@@ -83,8 +84,8 @@ public class Main extends javax.swing.JFrame {
 //        squareDir.start();
 //        squareWatch.start();
 //        
+
     }
-    
     
 
     /**
@@ -152,7 +153,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel8.setText("Ensambladores");
 
-        TrabajadoresNick.setText("0");
+        TrabajadoresNick.setText("1");
 
         GuionistasNick.setText("0");
 
