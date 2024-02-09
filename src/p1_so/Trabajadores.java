@@ -16,8 +16,8 @@ import java.util.logging.Logger;
 public class Trabajadores extends Thread {
 
     private int tipo;
-    private double sueldo;
-    private double sueldoAcumulado;
+//    private double ingresos;
+    private double sueldoHora;
     private String empresa;
     private Drive drive;
     private int duracionDia;
@@ -29,13 +29,12 @@ public class Trabajadores extends Thread {
     public Trabajadores(int tipo, String empresa, int duracionDia, Drive drive, Semaphore mutex) {
 
         this.tipo = tipo;
-        this.sueldoAcumulado = 0;
+//        this.ingresos= 0;
         this.empresa = empresa; //nombre de la empresa
         this.diasParaCompletar = 0;
         TrabajadoresEspecificaciones();  
-        this.drive = drive;
         this.duracionDia = duracionDia;
-
+        this.drive = drive;
         this.mutex = mutex;
     }
 
@@ -46,7 +45,7 @@ public class Trabajadores extends Thread {
                 this.ProduccionCapitulo();
                 
                 this.mutex.acquire();
-                this.drive.sumarSalario(sueldo);
+                this.drive.sumarSalario(sueldoHora);
                 this.mutex.release();
                 
                 sleep(this.duracionDia); // hay que despues cambiarlo para que se pueda cambiar la duracion del dia en la interfaz
@@ -61,23 +60,23 @@ public class Trabajadores extends Thread {
     private void TrabajadoresEspecificaciones() {
         if (empresa.equalsIgnoreCase("nickelodeon")) {
             if (getTipo() == 0) { // guionista
-                this.sueldo = 20;
+                this.sueldoHora = 20;
                 this.diasParaCompletar = 0.3;
             }
             if (getTipo() == 1) { //diseñador
-                this.sueldo = 26;
+                this.sueldoHora = 26;
                 this.diasParaCompletar = 0.26;
             }
             if (getTipo() == 2) { //animador
-                this.sueldo = 40;
+                this.sueldoHora = 40;
                 this.diasParaCompletar = 1.1;
             }
             if (getTipo() == 3) { //doblaje
-                this.sueldo = 16;
+                this.sueldoHora = 16;
                 this.diasParaCompletar = 5;
             }
             if (getTipo() == 4) { //guionista plotTwist
-                this.sueldo = 34;
+                this.sueldoHora = 34;
                 this.diasParaCompletar = 0.51;
             }
 
@@ -87,24 +86,20 @@ public class Trabajadores extends Thread {
         }
     }
 
-    public double salarioTotal() {
-        double sueldo = getSueldoAcumulado() + getSueldo() * 24;
-        setSueldoAcumulado(sueldo);
-        return sueldo;
-    }
+ 
 
     public void ProduccionCapitulo() {
-        this.diasParaCompletar += this.produccionDiaria;
-        if (this.diasParaCompletar >= 1) {
+        this.produccionDiaria += this.diasParaCompletar;
+        if (this.produccionDiaria >= 1) {
             try {
-                int diasAc = (int) Math.floor(this.diasParaCompletar);
+                int diasAc = (int) Math.floor(this.produccionDiaria);
                 this.mutex.acquire(1);
                 this.drive.aggDrive(diasAc, tipo);
                 this.mutex.release();
-                this.diasParaCompletar = 0;
+                this.produccionDiaria = 0;
 
-            } catch (Exception e) {
-                System.out.println(e);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Trabajadores.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -115,23 +110,17 @@ public class Trabajadores extends Thread {
 
     public void setTipo(int tipo) {
         this.tipo = tipo;
+        TrabajadoresEspecificaciones();
     }
 
     public double getSueldo() {
-        return sueldo += (this.diasParaCompletar * 24);
+        return sueldoHora += (this.diasParaCompletar * 24);
     }
 
     public void setSueldo(double sueldo) {
-        this.sueldo = sueldo;
+        this.sueldoHora = sueldo;
     }
 
-    public double getSueldoAcumulado() {
-        return sueldoAcumulado;
-    }
-
-    public void setSueldoAcumulado(double sueldoAcumulado) {
-        this.sueldoAcumulado = sueldoAcumulado;
-    }
 
     public String getEmpresa() {
         return empresa;
@@ -139,6 +128,7 @@ public class Trabajadores extends Thread {
 
     public void setEmpresa(String empresa) {
         this.empresa = empresa;
+        this.TrabajadoresEspecificaciones();
     }
 
     public Drive getDrive() {

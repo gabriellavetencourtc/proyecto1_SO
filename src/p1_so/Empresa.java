@@ -212,17 +212,17 @@ public class Empresa {
 
     public void setUtilidad(double utilidad) {
         this.utilidad = utilidad;
-        this.labels[9].setText(Double.toString(this.utilidad));
+        this.labels[8].setText(Double.toString(this.utilidad));
     }
 
     public void sumSalario(double salario) {
         this.salario += salario;
-        this.labels[10].setText(Double.toString(this.salario));
+        this.labels[9].setText(Double.toString(this.salario));
     }
 
     public void sumIngreso(double ingreso) {
         this.ingresos += ingreso;
-        this.labels[8].setText(Double.toString(this.ingresos));
+        this.labels[7].setText(Double.toString(this.ingresos));
     }
 
     public void limiteTrabajadores() {
@@ -330,7 +330,9 @@ public class Empresa {
     }
 
     public void setIngresos(double ingresos) {
+        
         this.ingresos = ingresos;
+        this.labels[7].setText(Double.toString(this.ingresos));
     }
 
     public double getSalario() {
@@ -339,6 +341,7 @@ public class Empresa {
 
     public void setSalario(double salario) {
         this.salario = salario;
+         this.labels[9].setText(Double.toString(this.salario));
     }
 
     public JLabel[] getLabels() {

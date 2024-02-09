@@ -33,8 +33,7 @@ public class Drive {
         this.animacion = 0;
         this.doblaje = 0;
         this.plotwist = 0;
-        this.diasRestantes = 10; //pilas no sabemos pq hay un 5 ahi
-        this.deadline = 0;
+        this.diasRestantes = 5; //pilas no sabemos pq hay un 5 ahi
         this.capitulo = 0;
         this.capituloPlotTwist = 0;
         this.contador = 0;
@@ -43,76 +42,152 @@ public class Drive {
         this.diasTranscurridos = 0;
     }
 
-    public void aggDrive(int cantidad, int tipo) {
-
-        if (tipo == 0) { // guionista
-            if (this.guion < 25) {
-                if ((this.guion + cantidad) > 25) {
-                    this.guion += (25 - this.guion);
-
-                } else {
-                    this.guion += cantidad;
+    public void aggDrive(int amount, int devType)throws InterruptedException {
+        switch (devType){
+        
+            case 0:
+                if (this.guion < 25){
+                    if ((this.guion + amount) > 25){
+                        this.guion += (25 - this.guion);
+                
+                    }else{
+                        this.guion += amount;
+                    }
+                    
+                    this.labels[0].setText(Integer.toString(this.guion));
+                    
                 }
-
-                this.labels[0].setText(Integer.toString(this.guion));
-
-            }
-        }
-        if (tipo == 1) { //diseñador
-            if (this.escenario < 20) {
-                if ((this.escenario + cantidad) > 20) {
-                    this.escenario += (20 - this.escenario);
-
-                } else {
-                    this.escenario += cantidad;
+                break;
+                
+            case 1:
+                if (this.escenario < 20){
+                    if ((this.escenario + amount) > 20){
+                        this.escenario += (20 - this.escenario);
+                
+                    }else{
+                        this.escenario += amount;
+                    }
+                    
+                    this.labels[1].setText(Integer.toString(this.escenario));
+                    
                 }
-
-                this.labels[1].setText(Integer.toString(this.escenario));
-
-            }
-            if (tipo == 2) { //animador
-                if (this.animacion < 55) {
-                    if ((this.animacion + cantidad) > 55) {
+                break;
+                
+            case 2:
+                if (this.animacion < 55){
+                    if ((this.animacion + amount) > 55){
                         this.animacion += (55 - this.animacion);
-
-                    } else {
-                        this.animacion += cantidad;
+                
+                    }else{
+                        this.animacion += amount;
                     }
-
+                    
                     this.labels[2].setText(Integer.toString(this.animacion));
-
+                    
                 }
-
-            }
-            if (tipo == 3) { //doblaje
-                if (this.doblaje < 35) {
-                    if ((this.doblaje + cantidad) > 35) {
+                break;
+                
+            case 3:
+                if (this.doblaje < 35){
+                    if ((this.doblaje + amount) > 35){
                         this.doblaje += (35 - this.doblaje);
-
-                    } else {
-                        this.doblaje += cantidad;
+                
+                    }else{
+                        this.doblaje += amount;
                     }
-
+                    
                     this.labels[3].setText(Integer.toString(this.doblaje));
-
+                    
                 }
-
-            }
-            if (tipo == 4) { //guionista plotTwist
-                if (this.plotwist < 10) {
-                    if ((this.plotwist + cantidad) > 10) {
+                
+                break;
+            
+            case 4:
+                if (this.plotwist < 10){
+                    if ((this.plotwist + amount) > 10){
                         this.plotwist += (10 - this.plotwist);
-
-                    } else {
-                        this.plotwist += cantidad;
+                
+                    }else{
+                        this.plotwist += amount;
                     }
-
+                    
                     this.labels[4].setText(Integer.toString(this.plotwist));
-
+                    
                 }
-            }
+                break;
         }
     }
+    
+//    public void aggDrive(int cantidad, int tipo) {
+//
+//        if (tipo == 0) { // guionista
+//            if (this.guion < 25) {
+//                if ((this.guion + cantidad) > 25) {
+//                    this.guion += (25 - this.guion);
+//
+//                } else {
+//                    this.guion += cantidad;
+//                }
+//
+//                this.labels[0].setText(Integer.toString(this.guion));
+//
+//            }
+//        }
+//        if (tipo == 1) { //diseñador
+//            if (this.escenario < 20) {
+//                if ((this.escenario + cantidad) > 20) {
+//                    this.escenario += (20 - this.escenario);
+//
+//                } else {
+//                    this.escenario += cantidad;
+//                }
+//
+//                this.labels[1].setText(Integer.toString(this.escenario));
+//
+//            }
+//            if (tipo == 2) { //animador
+//                if (this.animacion < 55) {
+//                    if ((this.animacion + cantidad) > 55) {
+//                        this.animacion += (55 - this.animacion);
+//
+//                    } else {
+//                        this.animacion += cantidad;
+//                    }
+//
+//                    this.labels[2].setText(Integer.toString(this.animacion));
+//
+//                }
+//
+//            }
+//            if (tipo == 3) { //doblaje
+//                if (this.doblaje < 35) {
+//                    if ((this.doblaje + cantidad) > 35) {
+//                        this.doblaje += (35 - this.doblaje);
+//
+//                    } else {
+//                        this.doblaje += cantidad;
+//                    }
+//
+//                    this.labels[3].setText(Integer.toString(this.doblaje));
+//
+//                }
+//
+//            }
+//            if (tipo == 4) { //guionista plotTwist
+//                if (this.plotwist < 10) {
+//                    if ((this.plotwist + cantidad) > 10) {
+//                        this.plotwist += (10 - this.plotwist);
+//
+//                    } else {
+//                        this.plotwist += cantidad;
+//                    }
+//
+//                    this.labels[4].setText(Integer.toString(this.plotwist));
+//
+//                }
+//            }
+//        }
+//    }
 
     public boolean ReqCapitulo() {
         if (this.empresa.equalsIgnoreCase("Nickelodeon")) {
@@ -255,8 +330,21 @@ public class Drive {
     }
 
     public void setDiasRestantes(int diasRestantes) {
+        
         this.diasRestantes = diasRestantes;
-        this.labels[5].setText(Integer.toString(this.diasRestantes));
+
+    if (this.diasRestantes <= 0) {
+        this.diasRestantes = this.deadline;
+    this.labels[5].setText(Integer.toString(this.diasRestantes));
+//        
+//this.diasRestantes = diasRestantes;
+//        
+//        if (this.diasRestantes <= 0) {
+//            this.labels[5].setText(Integer.toString(0));   
+//        }else{
+//            this.labels[5].setText(Integer.toString(this.diasRestantes));
+//        }
+    }
     }
 
     public int getDeadline() {
@@ -266,6 +354,9 @@ public class Drive {
     public void setDeadline(int deadline) {
         this.deadline = deadline;
     }
+
+   
+
 
     public int getCapitulo() {
         return capitulo;

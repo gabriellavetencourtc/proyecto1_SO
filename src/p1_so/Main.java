@@ -16,7 +16,7 @@ public class Main extends javax.swing.JFrame {
     Empresa Nickelodeon = new Empresa(17, "Nickelodeon"); //19 con PM y Dir
     Nickelodeon nick = new Nickelodeon();
 
-    int duracionDia = 5000;
+    int duracionDia = 3500;
 
     /**
      * Creates new form Main
@@ -38,12 +38,11 @@ public class Main extends javax.swing.JFrame {
 //      
 
 
-        deadline.setText("10");
+        deadline.setText("1");
         this.Nickelodeon.getDrive().setLabels(NickDriveLabels);
         this.Nickelodeon.setLabels(NickLabels);
-//        this.Nickelodeon.getCompanyDrive().setLabels(NickDriveLabels);
            inicioParaCap();
-//        
+           this.Nickelodeon.getDrive().setDeadline(5);
 //        this.squareEnix.getCompanyDrive().setLabels(CartoonDriveLabels);
 //        this.squareEnix.setLabels(CartoonLabels);
         this.DuracionDiaTF.setText(Integer.toString(duracionDia));

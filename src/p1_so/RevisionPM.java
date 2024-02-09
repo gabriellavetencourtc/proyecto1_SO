@@ -98,6 +98,8 @@ public class RevisionPM extends Thread {
     }
 
 
+    
+  
     public void enviarCapitulos() {
         if (this.empresa.getNombreEmpresa().equalsIgnoreCase("Nickelodeon")) {
             this.empresa.sumIngreso((this.drive.getCapitulo() * 450) + (this.drive.getCapituloPlotTwist() * 500));
