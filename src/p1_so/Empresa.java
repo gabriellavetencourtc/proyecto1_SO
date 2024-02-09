@@ -47,7 +47,6 @@ public class Empresa {
         this.ingresos = 0;
         this.salario = 0;
         this.utilidad = 0;
-        this.labels = labels;
         this.cantTrabajadores = cantTrabajadores;
     }
     

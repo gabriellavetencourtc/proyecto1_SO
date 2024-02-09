@@ -43,7 +43,6 @@ public class Trabajadores extends Thread {
     public void run() {
         while (true) {
             try {
-                //Logicamente los desarrolladores siempre trabajan, teoricamente no
                 this.ProduccionCapitulo();
                 
                 this.mutex.acquire();
@@ -55,6 +54,9 @@ public class Trabajadores extends Thread {
                 System.out.println(ex);
             }
         }
+        
+        
+       
     }
 
     private void TrabajadoresEspecificaciones() {
@@ -80,7 +82,7 @@ public class Trabajadores extends Thread {
                 this.diasParaCompletar = 0.51;
             }
 
-        }
+        } //CARTOON NETWORK
         if (empresa.equalsIgnoreCase("Cartoon network"))//seguir codigo
         {
         }
@@ -117,7 +119,7 @@ public class Trabajadores extends Thread {
     }
 
     public double getSueldo() {
-        return sueldo;
+        return sueldo += (this.diasParaCompletar * 24);
     }
 
     public void setSueldo(double sueldo) {

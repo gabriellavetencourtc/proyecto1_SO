@@ -933,7 +933,13 @@ public class Main extends javax.swing.JFrame {
 
     private void mostrarNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNickActionPerformed
         // TODO add your handling code here:        
-        nick.setVisible(true);
+        if(!GuionistasNick.getText().equals("0") && !DisenadoresNick.getText().equals("0") && !AnimadorNick.getText().equals("0") && !ActoresNick.getText().equals("0") 
+        && !GuioPlotNick.getText().equals("0") && !EnsambladoresNick.getText().equals("0")){
+           nick.setVisible(true); 
+        }else{
+           JOptionPane.showMessageDialog(null, "Debe haber al menos un trabajador de cada tipo para poder realizar el capitulo");
+        }
+        
     }//GEN-LAST:event_mostrarNickActionPerformed
 
     private void MenosGuiCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuiCartoonActionPerformed

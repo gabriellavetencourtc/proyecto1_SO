@@ -42,10 +42,9 @@ public class ProjectManager extends Thread {
     public void run(){
         while(true){
             try{
-                //Al iniciar el dia, inicia su rutina de trabajar y alternar streams
+                //Al iniciar el dia, inicia su rutina de trabajar y ver anime
                 animeTime();                
-                /*Segun el tiempo que pasa viendo streams, espera el resto para el siguiente dia y baja en 1 el contador
-                de dias restantes*/
+          
                 if (((this.duracionHora/2)*32) + (this.duracionHora*8) < this.duracionDia){
                     sleep((this.duracionHora*8) + (this.duracionDia - (((this.duracionHora/2)*32) + (this.duracionHora*8))));
                     this.mutex.acquire(1);
