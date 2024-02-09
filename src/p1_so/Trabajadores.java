@@ -55,7 +55,6 @@ public class Trabajadores extends Thread {
             }
         }
         
-        
        
     }
 
@@ -63,7 +62,7 @@ public class Trabajadores extends Thread {
         if (empresa.equalsIgnoreCase("nickelodeon")) {
             if (getTipo() == 0) { // guionista
                 this.sueldo = 20;
-                this.diasParaCompletar = 0.26;
+                this.diasParaCompletar = 0.3;
             }
             if (getTipo() == 1) { //diseñador
                 this.sueldo = 26;
@@ -191,3 +190,6 @@ public class Trabajadores extends Thread {
     }
 
 }
+
+
+

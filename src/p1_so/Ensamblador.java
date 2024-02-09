@@ -26,7 +26,8 @@ public class Ensamblador extends Thread {
         this.duracionDia = dia;
     }
 
-    public void ejecutar() {
+    @Override
+    public void run() {
         while (activo) {
             try {
                 // Verificar si hay suficientes componentes para ensamblar un juego

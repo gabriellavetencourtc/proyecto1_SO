@@ -23,6 +23,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+     
 
         //Se pasan los labels correspondientes a cada compañia y sus drives para manipular la interfaz        
         JLabel[] NickDriveLabels = {nick.getDriveGuiones(), nick.getDriveEscensarios(), nick.getDriveAnimaciones(), nick.getDriveDoblajes(), nick.getDrivePlot(), nick.getDeadline(), nick.getCapitulos(), nick.getCapitulosPT(), nick.getDiastrans()};
@@ -36,11 +37,12 @@ public class Main extends javax.swing.JFrame {
 //        JLabel[] CartoonLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
 //      
 
+
         deadline.setText("10");
         this.Nickelodeon.getDrive().setLabels(NickDriveLabels);
         this.Nickelodeon.setLabels(NickLabels);
 //        this.Nickelodeon.getCompanyDrive().setLabels(NickDriveLabels);
-
+           inicioParaCap();
 //        
 //        this.squareEnix.getCompanyDrive().setLabels(CartoonDriveLabels);
 //        this.squareEnix.setLabels(CartoonLabels);
@@ -83,6 +85,24 @@ public class Main extends javax.swing.JFrame {
 //        squareWatch.start();
 //   
     }
+    
+    public void inicioParaCap(){
+        int[] partesCapitulo = {0, 1, 2, 3, 4};
+        for(int i = 0; i < partesCapitulo.length; i++){
+            Trabajadores t1 = new Trabajadores(partesCapitulo[i], "Nickelodeon", this.duracionDia, this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex());
+            this.Nickelodeon.AggTrabajador(t1);
+        }
+        Ensamblador ens1 = new Ensamblador(this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), this.duracionDia);
+        this.Nickelodeon.AggEnsamblador(ens1);
+
+//        for(int j = 0; j < partesCapitulo.length; j++){
+//            GameDeveloper squareDev = new GameDeveloper(partesCapitulo[j], "SquareEnix", this.dayDuration, this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex());
+//            this.squareEnix.addDev(squareDev);
+//        }
+//        Integrator squareInt = new Integrator(this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), this.dayDuration);
+//        this.squareEnix.addIntegrator(squareInt);
+    }
+    
 
     public void MaxErrorTrab() {
         JOptionPane.showMessageDialog(null, "Máximo de trabajadores alcanzado, disminuya la cantidad!");

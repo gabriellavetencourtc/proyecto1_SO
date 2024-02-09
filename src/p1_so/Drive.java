@@ -60,8 +60,8 @@ public class Drive {
         }
         if (tipo == 1) { //diseñador
             if (this.escenario < 20) {
-                if ((this.escenario + cantidad) > 25) {
-                    this.escenario += (25 - this.escenario);
+                if ((this.escenario + cantidad) > 20) {
+                    this.escenario += (20 - this.escenario);
 
                 } else {
                     this.escenario += cantidad;
