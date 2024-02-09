@@ -4,6 +4,8 @@
  */
 package p1_so;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author daniela
@@ -26,17 +28,312 @@ public class StarChannel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel20 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        capitulos3 = new javax.swing.JLabel();
+        capitulosPT3 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        DriveGuiones3 = new javax.swing.JLabel();
+        diastrans3 = new javax.swing.JLabel();
+        DriveEscensarios3 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        UtilidadST = new javax.swing.JLabel();
+        DriveAnimaciones3 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        EgresosST = new javax.swing.JLabel();
+        DriveDoblajes3 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        DrivePlot3 = new javax.swing.JLabel();
+        IngresosST = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        PMestado3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        PMfaltas3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        $faltasPM = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        DirEstado3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        deadline3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel20.setText("Drive");
+
+        jLabel10.setText("Ingresos:");
+
+        capitulos3.setText("0");
+
+        capitulosPT3.setText("0");
+
+        jLabel24.setText("PERSONAL DIRECTIVO");
+
+        jLabel11.setText("Egresos:");
+
+        DriveGuiones3.setText("0");
+
+        diastrans3.setText("0");
+
+        DriveEscensarios3.setText("0");
+
+        jLabel12.setText("Utilidad:");
+
+        jLabel1.setText("STAR CHANNEL");
+
+        UtilidadST.setText("0");
+
+        DriveAnimaciones3.setText("0");
+
+        jLabel13.setText("PRODUCCIÓN");
+
+        jLabel2.setText("ACTIVIDADES");
+
+        EgresosST.setText("0");
+
+        DriveDoblajes3.setText("0");
+
+        jLabel14.setText("Partes");
+
+        jLabel3.setText("Director:");
+
+        DrivePlot3.setText("0");
+
+        IngresosST.setText("0");
+
+        jLabel15.setText("Guiones");
+
+        jLabel4.setText("Project Manager:");
+
+        PMestado3.setText("-");
+
+        jLabel5.setText("Faltas PM:");
+
+        jLabel16.setText("Escenarios");
+
+        jLabel21.setText("LISTOS");
+
+        PMfaltas3.setText("0");
+
+        jLabel6.setText("TIEMPO");
+
+        jLabel17.setText("Animaciones");
+
+        jLabel22.setText("Capítulos estándar:");
+
+        $faltasPM.setText("$");
+
+        jLabel7.setText("Días transcurridos:");
+
+        jLabel18.setText("Doblajes");
+
+        jLabel23.setText("Capítulos con PlotTwist:");
+
+        DirEstado3.setText("0");
+
+        jLabel8.setText("Próximo deadline:");
+
+        jLabel19.setText("PlotTwists");
+
+        deadline3.setText("0");
+
+        jLabel9.setText("FINANZAS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel24)
+                        .addGap(359, 359, 359))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(DirEstado3))
+                                    .addComponent(jLabel6)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(IngresosST))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(EgresosST))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(deadline3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(diastrans3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent($faltasPM, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PMfaltas3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PMestado3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(UtilidadST)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel18)
+                                        .addComponent(jLabel16)
+                                        .addComponent(jLabel15)
+                                        .addComponent(jLabel17)
+                                        .addComponent(jLabel19))
+                                    .addGap(58, 58, 58)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(DriveEscensarios3)
+                                        .addComponent(DriveGuiones3)
+                                        .addComponent(DriveAnimaciones3)
+                                        .addComponent(DriveDoblajes3)
+                                        .addComponent(DrivePlot3)))
+                                .addComponent(jLabel21)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel22)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(capitulos3))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel23)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(capitulosPT3))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel14)
+                                    .addGap(69, 69, 69)
+                                    .addComponent(jLabel20)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(46, 46, 46)))))
+                .addGap(106, 106, 106))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(249, 249, 249)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel13))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel15)
+                                    .addComponent(DriveGuiones3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel16)
+                                    .addComponent(DriveEscensarios3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel17)
+                                    .addComponent(DriveAnimaciones3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18)
+                                    .addComponent(DriveDoblajes3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel19)
+                                    .addComponent(DrivePlot3))
+                                .addGap(34, 34, 34)
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel22)
+                                    .addComponent(capitulos3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel23)
+                                    .addComponent(capitulosPT3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(jLabel20))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel24)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(DirEstado3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(PMestado3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(PMfaltas3)
+                            .addComponent($faltasPM))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(diastrans3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(deadline3))
+                        .addGap(35, 35, 35)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(IngresosST))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(EgresosST))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(UtilidadST))))
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -77,6 +374,176 @@ public class StarChannel extends javax.swing.JFrame {
         });
     }
 
+    public JLabel get$faltasPM() {
+        return $faltasPM;
+    }
+
+    public void set$faltasPM(JLabel $faltasPM) {
+        this.$faltasPM = $faltasPM;
+    }
+
+    public JLabel getDirEstado3() {
+        return DirEstado3;
+    }
+
+    public void setDirEstado3(JLabel DirEstado3) {
+        this.DirEstado3 = DirEstado3;
+    }
+
+    public JLabel getDriveAnimaciones3() {
+        return DriveAnimaciones3;
+    }
+
+    public void setDriveAnimaciones3(JLabel DriveAnimaciones3) {
+        this.DriveAnimaciones3 = DriveAnimaciones3;
+    }
+
+    public JLabel getDriveDoblajes3() {
+        return DriveDoblajes3;
+    }
+
+    public void setDriveDoblajes3(JLabel DriveDoblajes3) {
+        this.DriveDoblajes3 = DriveDoblajes3;
+    }
+
+    public JLabel getDriveEscensarios3() {
+        return DriveEscensarios3;
+    }
+
+    public void setDriveEscensarios3(JLabel DriveEscensarios3) {
+        this.DriveEscensarios3 = DriveEscensarios3;
+    }
+
+    public JLabel getDriveGuiones3() {
+        return DriveGuiones3;
+    }
+
+    public void setDriveGuiones3(JLabel DriveGuiones3) {
+        this.DriveGuiones3 = DriveGuiones3;
+    }
+
+    public JLabel getDrivePlot3() {
+        return DrivePlot3;
+    }
+
+    public void setDrivePlot3(JLabel DrivePlot3) {
+        this.DrivePlot3 = DrivePlot3;
+    }
+
+    public JLabel getEgresosST() {
+        return EgresosST;
+    }
+
+    public void setEgresosST(JLabel EgresosST) {
+        this.EgresosST = EgresosST;
+    }
+
+    public JLabel getIngresosST() {
+        return IngresosST;
+    }
+
+    public void setIngresosST(JLabel IngresosST) {
+        this.IngresosST = IngresosST;
+    }
+
+    public JLabel getUtilidadST() {
+        return UtilidadST;
+    }
+
+    public void setUtilidadST(JLabel UtilidadST) {
+        this.UtilidadST = UtilidadST;
+    }
+
+    public JLabel getPMestado3() {
+        return PMestado3;
+    }
+
+    public void setPMestado3(JLabel PMestado3) {
+        this.PMestado3 = PMestado3;
+    }
+
+    public JLabel getPMfaltas3() {
+        return PMfaltas3;
+    }
+
+    public void setPMfaltas3(JLabel PMfaltas3) {
+        this.PMfaltas3 = PMfaltas3;
+    }
+
+
+    public JLabel getCapitulos3() {
+        return capitulos3;
+    }
+
+    public void setCapitulos3(JLabel capitulos3) {
+        this.capitulos3 = capitulos3;
+    }
+
+    public JLabel getCapitulosPT3() {
+        return capitulosPT3;
+    }
+
+    public void setCapitulosPT3(JLabel capitulosPT3) {
+        this.capitulosPT3 = capitulosPT3;
+    }
+
+    public JLabel getDeadline3() {
+        return deadline3;
+    }
+
+    public void setDeadline3(JLabel deadline3) {
+        this.deadline3 = deadline3;
+    }
+
+    public JLabel getDiastrans3() {
+        return diastrans3;
+    }
+
+    public void setDiastrans3(JLabel diastrans3) {
+        this.diastrans3 = diastrans3;
+    }
+    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel $faltasPM;
+    private javax.swing.JLabel DirEstado3;
+    private javax.swing.JLabel DriveAnimaciones3;
+    private javax.swing.JLabel DriveDoblajes3;
+    private javax.swing.JLabel DriveEscensarios3;
+    private javax.swing.JLabel DriveGuiones3;
+    private javax.swing.JLabel DrivePlot3;
+    private javax.swing.JLabel EgresosST;
+    private javax.swing.JLabel IngresosST;
+    private javax.swing.JLabel PMestado3;
+    private javax.swing.JLabel PMfaltas3;
+    private javax.swing.JLabel UtilidadST;
+    private javax.swing.JLabel capitulos3;
+    private javax.swing.JLabel capitulosPT3;
+    private javax.swing.JLabel deadline3;
+    private javax.swing.JLabel diastrans3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,20 +30,18 @@ public class Ensamblador extends Thread {
     public void run() {
         while (activo) {
             try {
-                // Verificar si hay suficientes componentes para ensamblar un juego
+
                 this.mutex.acquire(1);
                 if (this.drive.ReqCapitulo()) {
 
-                    // Consumir componentes
+
                     drive.crearCapitulo();
                     this.drive.sumarSalario(this.salario);
                     this.mutex.release();
-                    // Dormir durante el tiempo necesario para el ensamblaje
-                    // (Aquí dormimos por un tiempo corto. Ajustar según sea necesario.)
+
                     sleep(this.duracionDia*2);
 
-                    // Agregar el juego ensamblado al Drive
-                    // (Implementar esto según tus requisitos.)
+
 
                 } else {
                     this.drive.sumarSalario((this.salario));

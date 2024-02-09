@@ -33,7 +33,7 @@ public class Drive {
         this.animacion = 0;
         this.doblaje = 0;
         this.plotwist = 0;
-        this.diasRestantes = 5; //pilas no sabemos pq hay un 5 ahi
+        this.diasRestantes = 5; 
         this.capitulo = 0;
         this.capituloPlotTwist = 0;
         this.contador = 0;
@@ -218,7 +218,7 @@ public class Drive {
             }
 
         }
-        return false; //pilas
+        return false;
     }
 
     public void crearCapitulo() {
@@ -329,6 +329,10 @@ public class Drive {
         return diasRestantes;
     }
 
+//    public void setDiasRestantes(int diasRestantes) {
+//        this.diasRestantes = diasRestantes;
+//    }
+
     public void setDiasRestantes(int diasRestantes) {
         
         this.diasRestantes = diasRestantes;
@@ -406,7 +410,7 @@ public class Drive {
         this.diasTranscurridos = diasTranscurridos;
     }
 
-    //no estoy segura porque lo multiplica por 1000
+
     public void sumarSalario(double salary){
         this.salario += ((salary/1000)*24);
     }

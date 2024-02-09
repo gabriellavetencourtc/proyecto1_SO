@@ -35,46 +35,46 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="DirEstado" min="-2" max="-2" attributes="0"/>
+                              <Component id="DirEstado1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="IngresosNick" min="-2" max="-2" attributes="0"/>
+                              <Component id="IngresosNick1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EgresosNick" min="-2" max="-2" attributes="0"/>
+                              <Component id="EgresosNick1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="deadline" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Component id="deadline1" min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel9" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="diastrans" min="-2" max="-2" attributes="0"/>
+                              <Component id="diastrans1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="$faltasPM" min="-2" pref="13" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PMfaltas" min="-2" pref="68" max="-2" attributes="0"/>
+                              <Component id="PMfaltas1" min="-2" pref="68" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PMestado" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="PMestado1" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="UtilidadNick" min="-2" max="-2" attributes="0"/>
+                              <Component id="UtilidadNick1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -93,23 +93,23 @@
                               </Group>
                               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="DriveEscensarios" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveGuiones" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveAnimaciones" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveDoblajes" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DrivePlot" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveEscensarios1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveGuiones1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveAnimaciones1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveDoblajes1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DrivePlot1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="capitulos" min="-2" max="-2" attributes="0"/>
+                              <Component id="capitulos1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="capitulosPT" min="-2" max="-2" attributes="0"/>
+                              <Component id="capitulosPT1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
@@ -126,17 +126,14 @@
               </Group>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="331" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
@@ -150,9 +147,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" max="32767" attributes="0"/>
                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -164,39 +161,39 @@
                               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveGuiones" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveGuiones1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveEscensarios" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveEscensarios1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveAnimaciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveAnimaciones1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DriveDoblajes" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DriveDoblajes1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="DrivePlot" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="DrivePlot1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="capitulos" min="-2" max="-2" attributes="0"/>
+                                  <Component id="capitulos1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="capitulosPT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="capitulosPT1" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -215,17 +212,17 @@
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="DirEstado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DirEstado1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMestado" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMestado1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMfaltas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="PMfaltas1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="$faltasPM" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="38" max="32767" attributes="0"/>
@@ -233,29 +230,29 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="diastrans" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="diastrans1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="deadline" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="deadline1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="17" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="IngresosNick" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="IngresosNick1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="EgresosNick" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EgresosNick1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="UtilidadNick" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="UtilidadNick1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -372,27 +369,27 @@
         <Property name="text" type="java.lang.String" value="Drive"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DriveGuiones">
+    <Component class="javax.swing.JLabel" name="DriveGuiones1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DriveEscensarios">
+    <Component class="javax.swing.JLabel" name="DriveEscensarios1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DriveAnimaciones">
+    <Component class="javax.swing.JLabel" name="DriveAnimaciones1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DriveDoblajes">
+    <Component class="javax.swing.JLabel" name="DriveDoblajes1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DrivePlot">
+    <Component class="javax.swing.JLabel" name="DrivePlot1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
@@ -414,47 +411,47 @@
         <Property name="text" type="java.lang.String" value="Cap&#xed;tulos con PlotTwist:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="deadline">
+    <Component class="javax.swing.JLabel" name="deadline1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="capitulos">
+    <Component class="javax.swing.JLabel" name="capitulos1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="capitulosPT">
+    <Component class="javax.swing.JLabel" name="capitulosPT1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="diastrans">
+    <Component class="javax.swing.JLabel" name="diastrans1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="UtilidadNick">
+    <Component class="javax.swing.JLabel" name="UtilidadNick1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="EgresosNick">
+    <Component class="javax.swing.JLabel" name="EgresosNick1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="IngresosNick">
+    <Component class="javax.swing.JLabel" name="IngresosNick1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="PMestado">
+    <Component class="javax.swing.JLabel" name="PMestado1">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="PMfaltas">
+    <Component class="javax.swing.JLabel" name="PMfaltas1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
@@ -464,7 +461,7 @@
         <Property name="text" type="java.lang.String" value="$"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="DirEstado">
+    <Component class="javax.swing.JLabel" name="DirEstado1">
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>

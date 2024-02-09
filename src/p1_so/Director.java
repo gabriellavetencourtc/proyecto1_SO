@@ -41,13 +41,11 @@ public class Director extends Thread {
     @Override
     public void run() {
         try {
-            //Se toman pausas cortas entre ejecucion
+          
             sleep(10);
-            while (true) {
-                //Si ya es la hora de revisar al project manager, el condicional sera cierto y se ejecuta el codigo correspondiente
+            while (true) { 
                 if (!this.pausa) {
 
-                    //Si el pm no esta trabajando y aun no se le ha colocado una falta, se procede a colocarle una falta
                     if (!"Trabajando".equals(this.pm.getEstadoActual()) && !this.vioAnime) {
                         this.mutex.acquire(1);
                         faltaPM();
@@ -98,15 +96,9 @@ public class Director extends Thread {
         this.faltasPM = faltasPM;
     }
 
-    /**
-     * Funcion para registrar fallas del pm
-     */
+
     public void faltaPM() {
-        /**
-         * Se modifica el booleano que indica que ya se penalizo al pm Aumentan
-         * en 1 las penalizaciones para este deadline y se reduce su salario en
-         * 50
-         */
+
         this.vioAnime = true;
         this.faltasPM += 1;
         this.faltaLabel.setText(Integer.toString(this.faltasPM * 100));

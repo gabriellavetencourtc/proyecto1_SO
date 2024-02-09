@@ -22,7 +22,7 @@ public class Trabajadores extends Thread {
     private Drive drive;
     private int duracionDia;
     private double produccionDiaria;
-    private double diasParaCompletar; //dias que se tarda un trabajador en completar su tarea //acumulatedOutput
+    private double diasParaCompletar; 
     private Semaphore mutex;
     private boolean activo = true;
 
@@ -48,7 +48,7 @@ public class Trabajadores extends Thread {
                 this.drive.sumarSalario(sueldoHora);
                 this.mutex.release();
                 
-                sleep(this.duracionDia); // hay que despues cambiarlo para que se pueda cambiar la duracion del dia en la interfaz
+                sleep(this.duracionDia); 
             } catch (InterruptedException ex) {
                 System.out.println(ex);
             }
@@ -81,9 +81,50 @@ public class Trabajadores extends Thread {
             }
 
         } //CARTOON NETWORK
-        if (empresa.equalsIgnoreCase("Cartoon network"))//seguir codigo
-        {
-        }
+        if (empresa.equalsIgnoreCase("Cartoon network")){
+            
+        }if (getTipo() == 0) { // guionista
+                this.sueldoHora = 20;
+                this.diasParaCompletar = 0.3;
+            }
+            if (getTipo() == 1) { //diseñador
+                this.sueldoHora = 26;
+                this.diasParaCompletar = 0.26;
+            }
+            if (getTipo() == 2) { //animador
+                this.sueldoHora = 40;
+                this.diasParaCompletar = 1.1;
+            }
+            if (getTipo() == 3) { //doblaje
+                this.sueldoHora = 16;
+                this.diasParaCompletar = 5;
+            }
+            if (getTipo() == 4) { //guionista plotTwist
+                this.sueldoHora = 34;
+                this.diasParaCompletar = 0.51;
+            }
+            if (empresa.equalsIgnoreCase("Star Channel")){
+            
+        }if (getTipo() == 0) { // guionista
+                this.sueldoHora = 20;
+                this.diasParaCompletar = 0.3;
+            }
+            if (getTipo() == 1) { //diseñador
+                this.sueldoHora = 26;
+                this.diasParaCompletar = 0.26;
+            }
+            if (getTipo() == 2) { //animador
+                this.sueldoHora = 40;
+                this.diasParaCompletar = 1.1;
+            }
+            if (getTipo() == 3) { //doblaje
+                this.sueldoHora = 16;
+                this.diasParaCompletar = 5;
+            }
+            if (getTipo() == 4) { //guionista plotTwist
+                this.sueldoHora = 34;
+                this.diasParaCompletar = 0.51;
+            }
     }
 
  

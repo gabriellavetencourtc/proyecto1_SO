@@ -15,8 +15,16 @@ public class Main extends javax.swing.JFrame {
 
     Empresa Nickelodeon = new Empresa(17, "Nickelodeon"); //19 con PM y Dir
     Nickelodeon nick = new Nickelodeon();
-
+    
+    Empresa Cartoon = new Empresa(20, "Cartoon Network"); //20 con PM y Dir
+    Cartoon cartoon = new Cartoon();
+    
+    Empresa StarChannel = new Empresa(16, "Star Channel"); //16 con PM y Dir
+    StarChannel starchannel = new StarChannel();
+    
     int duracionDia = 3500;
+    
+    
 
     /**
      * Creates new form Main
@@ -28,30 +36,35 @@ public class Main extends javax.swing.JFrame {
         //Se pasan los labels correspondientes a cada compañia y sus drives para manipular la interfaz        
         JLabel[] NickDriveLabels = {nick.getDriveGuiones(), nick.getDriveEscensarios(), nick.getDriveAnimaciones(), nick.getDriveDoblajes(), nick.getDrivePlot(), nick.getDeadline(), nick.getCapitulos(), nick.getCapitulosPT(), nick.getDiastrans()};
         JLabel[] NickLabels = {TrabajadoresNick, GuionistasNick, DisenadoresNick, AnimadorNick, ActoresNick, GuioPlotNick, EnsambladoresNick, nick.getIngresosNick(), nick.getUtilidadNick(), nick.getEgresosNick()};
-//        DevQty2, NarrativeQty2, LevelQty2, SpriteQty2, LogicQty2, DLCQty2, IntegratorQty2,
 
-//        JLabel[] StarChannelDriveLabels = {narrativeqtyGUI1, levelqtyGUI1, spriteqtyGUI1, logicqtyGUI2, dlcqtyGUI1, DeadlineGUI1, readygamesqtyGUI1, readydlcGUI1, dayspassedGUI2};  
-//        JLabel[] StarChannelLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
-//        
-//        JLabel[] CartoonDriveLabels = {narrativeqtyGUI1, levelqtyGUI1, spriteqtyGUI1, logicqtyGUI2, dlcqtyGUI1, DeadlineGUI1, readygamesqtyGUI1, readydlcGUI1, dayspassedGUI2};  
-//        JLabel[] CartoonLabels = {DevQty1, NarrativeQty1, LevelQty1, SpriteQty1, LogicQty1, DLCQty1, IntegratorQty1, DevQty3, NarrativeQty3, LevelQty3, SpriteQty3, LogicQty3, DLCQty3, IntegratorQty3, incomeGUI1, utilityGUI2, totalsalariesGUI1};
+        JLabel[] CartoonDriveLabels = {cartoon.getDriveGuiones(), cartoon.getDriveEscensarios(), cartoon.getDriveAnimaciones(), cartoon.getDriveDoblajes(), cartoon.getDrivePlot(), cartoon.getDeadline(), cartoon.getCapitulos(), cartoon.getCapitulosPT(), cartoon.getDiastrans()};
+        JLabel[] CartoonLabels = {TrabajadoresCartoon, GuionistasCartoon, DiseñadoresCartoon, AnimadorCartoon, ActoresCartoon, GuioPlotCartoon, EnsambladoresCartoon, cartoon.getIngresosCartoon(), cartoon.getUtilidadCartoon(), cartoon.getEgresosCartoon()};
+             
+        JLabel[] StarChannelDriveLabels = {starchannel.getDriveGuiones3(), starchannel.getDriveEscensarios3(), starchannel.getDriveAnimaciones3(), starchannel.getDriveDoblajes3(), starchannel.getDrivePlot3(), starchannel.getDeadline3(), starchannel.getCapitulos3(), starchannel.getCapitulosPT3(), starchannel.getDiastrans3()};
+        JLabel[] StarChannelLabels = {TrabajadoresStar, GuionistasStar, DiseñadoresStar, AnimadorStar, ActoresStar, GuioPlotStar, EnsambladoresStar, starchannel.getIngresosST(), starchannel.getUtilidadST(), starchannel.getEgresosST()};
 //      
+     
 
 
         deadline.setText("1");
         this.Nickelodeon.getDrive().setLabels(NickDriveLabels);
         this.Nickelodeon.setLabels(NickLabels);
+        
+        this.Cartoon.getDrive().setLabels(CartoonDriveLabels);
+        this.Cartoon.setLabels(CartoonLabels);
+        
+        this.StarChannel.getDrive().setLabels(StarChannelDriveLabels);
+        this.StarChannel.setLabels(StarChannelLabels);
            inicioParaCap();
-           this.Nickelodeon.getDrive().setDeadline(5);
-//        this.squareEnix.getCompanyDrive().setLabels(CartoonDriveLabels);
-//        this.squareEnix.setLabels(CartoonLabels);
+       
+
         this.DuracionDiaTF.setText(Integer.toString(duracionDia));
 
-        //Lectura de la configuracion guardada en txt 
-//        readConfig();
-        //Se refleja la lectura la lectura de desarrolladores maximos de cada compañia    
+
+  
         TrabajadoresNick.setText(Integer.toString(this.Nickelodeon.getCantTrabajadores()));
-//        maxDevsGUI1.setText(Integer.toString(this.squareEnix.getMaxDevs()));
+        TrabajadoresCartoon.setText(Integer.toString(this.Cartoon.getCantTrabajadores()));
+        TrabajadoresStar.setText(Integer.toString(this.StarChannel.getCantTrabajadores()));
 
         //Conversion de hora y minutos   
         int duracionHora = duracionDia / 24;
@@ -63,26 +76,33 @@ public class Main extends javax.swing.JFrame {
             duracionMin = 1;
         }
 
-        //Se crea e inicializan los directores y pms de cada compañia
+   
         ProjectManager nickPM = new ProjectManager(this.duracionDia, duracionHora, duracionMin, this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), nick.getPMestado());
         Director Nickdir = new Director(this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), nickPM, duracionMin, nick.getPMfaltas());
         RevisionPM NickRevPM = new RevisionPM(this.duracionDia, duracionHora, duracionMin, Nickdir, nick.getDirEstado(), this.Nickelodeon);
 
-//        ProjectManager squareMan = new ProjectManager(this.dayDuration, duracionHora, duracionMin, this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), PMstateGUI1);
-//        Director squareDir = new Director(this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), squareMan, duracionMin, PMfaultsGUI1, PMfaults$GUI1);
-//        RevisionPM squareWatch = new RevisionPM(this.dayDuration, duracionHora, duracionMin, squareDir, directorstateGUI1,this.squareEnix);
-//        
-//      
+        ProjectManager CartoonPM = new ProjectManager(this.duracionDia, duracionHora, duracionMin, this.Cartoon.getDrive(), this.Cartoon.getMutex(), cartoon.getPMestado());
+        Director Cartoondir = new Director(this.Cartoon.getDrive(), this.Cartoon.getMutex(), CartoonPM, duracionMin, cartoon.getPMfaltas());
+        RevisionPM CartoonRevPM = new RevisionPM(this.duracionDia, duracionHora, duracionMin, Cartoondir, cartoon.getDirEstado(), this.Cartoon);
+        
+        ProjectManager StarPM = new ProjectManager(this.duracionDia, duracionHora, duracionMin, this.StarChannel.getDrive(), this.StarChannel.getMutex(), starchannel.getPMestado3());
+        Director Stardir = new Director(this.StarChannel.getDrive(), this.StarChannel.getMutex(), StarPM, duracionMin, starchannel.getPMfaltas3());
+        RevisionPM StarRevPM = new RevisionPM(this.duracionDia, duracionHora, duracionMin, Stardir, starchannel.getDirEstado3(), this.StarChannel);
+
+  
         
         nickPM.start();       
         Nickdir.start();
         NickRevPM.start();
+        
+        CartoonPM.start();       
+        Cartoondir.start();
+        CartoonRevPM.start();
+        
+        StarPM.start();       
+        Stardir.start();
+        StarRevPM.start();
 
-
-//        squareMan.start();
-//        squareDir.start();
-//        squareWatch.start();
-//   
     }
     
     public void inicioParaCap(){
@@ -90,16 +110,27 @@ public class Main extends javax.swing.JFrame {
         for(int i = 0; i < partesCapitulo.length; i++){
             Trabajadores t1 = new Trabajadores(partesCapitulo[i], "Nickelodeon", this.duracionDia, this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex());
             this.Nickelodeon.AggTrabajador(t1);
+            this.Nickelodeon.getDrive().setDiasRestantes(5);
+            this.Nickelodeon.getDrive().setDeadline(5);
+            this.nick.getDeadline().setText(Integer.toString(Nickelodeon.getDrive().getDeadline()));
         }
         Ensamblador ens1 = new Ensamblador(this.Nickelodeon.getDrive(), this.Nickelodeon.getMutex(), this.duracionDia);
         this.Nickelodeon.AggEnsamblador(ens1);
 
-//        for(int j = 0; j < partesCapitulo.length; j++){
-//            GameDeveloper squareDev = new GameDeveloper(partesCapitulo[j], "SquareEnix", this.dayDuration, this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex());
-//            this.squareEnix.addDev(squareDev);
-//        }
-//        Integrator squareInt = new Integrator(this.squareEnix.getCompanyDrive(), this.squareEnix.getMutex(), this.dayDuration);
-//        this.squareEnix.addIntegrator(squareInt);
+        for(int j = 0; j < partesCapitulo.length; j++){
+            Trabajadores t2 = new Trabajadores(partesCapitulo[j], "Cartoon", this.duracionDia, this.Cartoon.getDrive(), this.Cartoon.getMutex());
+            this.Cartoon.AggTrabajador(t2);
+        }
+        Ensamblador ens2 = new Ensamblador(this.Cartoon.getDrive(), this.Cartoon.getMutex(), this.duracionDia);
+        this.Cartoon.AggEnsamblador(ens2);
+        
+        for(int h = 0; h < partesCapitulo.length; h++){
+            Trabajadores t3 = new Trabajadores(partesCapitulo[h], "Star Channel", this.duracionDia, this.StarChannel.getDrive(), this.StarChannel.getMutex());
+            this.StarChannel.AggTrabajador(t3);
+        }
+        Ensamblador ens3 = new Ensamblador(this.StarChannel.getDrive(), this.StarChannel.getMutex(), this.duracionDia);
+        this.StarChannel.AggEnsamblador(ens3);
+        
     }
     
 
@@ -201,8 +232,8 @@ public class Main extends javax.swing.JFrame {
         ActoresStar = new javax.swing.JLabel();
         GuioPlotStar = new javax.swing.JLabel();
         EnsambladoresStar = new javax.swing.JLabel();
-        MenosGuioPlot = new javax.swing.JButton();
-        MasGuioPlot = new javax.swing.JButton();
+        MenosGuioStar = new javax.swing.JButton();
+        MasGuioStar = new javax.swing.JButton();
         MenosDiseñadorStar = new javax.swing.JButton();
         MasDiseñadorStar = new javax.swing.JButton();
         MenosAnimadorStar = new javax.swing.JButton();
@@ -415,26 +446,81 @@ public class Main extends javax.swing.JFrame {
         });
 
         MasGuioCartoon.setText("+");
+        MasGuioCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasGuioCartoonActionPerformed(evt);
+            }
+        });
 
         MenosDiseñadorCartoon.setText("-");
+        MenosDiseñadorCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosDiseñadorCartoonActionPerformed(evt);
+            }
+        });
 
         MasDiseñadorCartoon.setText("+");
+        MasDiseñadorCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasDiseñadorCartoonActionPerformed(evt);
+            }
+        });
 
         MenosAnimadorCartoon.setText("-");
+        MenosAnimadorCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosAnimadorCartoonActionPerformed(evt);
+            }
+        });
 
         MasAnimadorCartoon.setText("+");
+        MasAnimadorCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasAnimadorCartoonActionPerformed(evt);
+            }
+        });
 
         MenosActCartoon.setText("-");
+        MenosActCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosActCartoonActionPerformed(evt);
+            }
+        });
 
         MasActCartoon.setText("+");
+        MasActCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasActCartoonActionPerformed(evt);
+            }
+        });
 
         MenosPlotCartoon.setText("-");
+        MenosPlotCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosPlotCartoonActionPerformed(evt);
+            }
+        });
 
         MasPlotCartoon.setText("+");
+        MasPlotCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasPlotCartoonActionPerformed(evt);
+            }
+        });
 
         MenosEnsambCartoon.setText("-");
+        MenosEnsambCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosEnsambCartoonActionPerformed(evt);
+            }
+        });
 
         MasEnsambCartoon.setText("+");
+        MasEnsambCartoon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasEnsambCartoonActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Star Channel");
 
@@ -466,23 +552,68 @@ public class Main extends javax.swing.JFrame {
 
         EnsambladoresStar.setText("0");
 
-        MenosGuioPlot.setText("-");
+        MenosGuioStar.setText("-");
+        MenosGuioStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosGuioStarActionPerformed(evt);
+            }
+        });
 
-        MasGuioPlot.setText("+");
+        MasGuioStar.setText("+");
+        MasGuioStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasGuioStarActionPerformed(evt);
+            }
+        });
 
         MenosDiseñadorStar.setText("-");
+        MenosDiseñadorStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosDiseñadorStarActionPerformed(evt);
+            }
+        });
 
         MasDiseñadorStar.setText("+");
+        MasDiseñadorStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasDiseñadorStarActionPerformed(evt);
+            }
+        });
 
         MenosAnimadorStar.setText("-");
+        MenosAnimadorStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosAnimadorStarActionPerformed(evt);
+            }
+        });
 
         MasAnimadorStar.setText("+");
+        MasAnimadorStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasAnimadorStarActionPerformed(evt);
+            }
+        });
 
         MenosActoresStar.setText("-");
+        MenosActoresStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosActoresStarActionPerformed(evt);
+            }
+        });
 
         MasActoresStar.setText("+");
+        MasActoresStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasActoresStarActionPerformed(evt);
+            }
+        });
 
         MenosPlotStar.setText("-");
+        MenosPlotStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosPlotStarActionPerformed(evt);
+            }
+        });
 
         MasPlotStar.setText("+");
         MasPlotStar.addActionListener(new java.awt.event.ActionListener() {
@@ -492,8 +623,18 @@ public class Main extends javax.swing.JFrame {
         });
 
         MenosEnsambStar.setText("-");
+        MenosEnsambStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosEnsambStarActionPerformed(evt);
+            }
+        });
 
         MasEnsambStar.setText("+");
+        MasEnsambStar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MasEnsambStarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -645,9 +786,9 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(GuionistasStar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MenosGuioPlot)
+                        .addComponent(MenosGuioStar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(MasGuioPlot))
+                        .addComponent(MasGuioStar))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AnimadorStar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -711,8 +852,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(MasGuioCartoon)
                     .addComponent(jLabel24)
                     .addComponent(GuionistasStar)
-                    .addComponent(MenosGuioPlot)
-                    .addComponent(MasGuioPlot))
+                    .addComponent(MenosGuioStar)
+                    .addComponent(MasGuioStar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -924,7 +1065,7 @@ public class Main extends javax.swing.JFrame {
         if (deadlineActual > 1) {
             deadlineActual--;
             Nickelodeon.getDrive().setDeadline(deadlineActual);
-//            squareEnix.getCompanyDrive().setDeadLine(deadlineActual);
+
             this.deadline.setText(Integer.toString(deadlineActual));
 
         }
@@ -935,39 +1076,208 @@ public class Main extends javax.swing.JFrame {
         int deadlineActual = Nickelodeon.getDrive().getDeadline();
         deadlineActual++;
         Nickelodeon.getDrive().setDeadline(deadlineActual);
-//        squareEnix.getCompanyDrive().setDeadLine(deadlineActual);
+
 
         this.deadline.setText(Integer.toString(deadlineActual));
     }//GEN-LAST:event_masDeadlineActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        // TODO add your handling code here:
-//         if(DuracionDiaTF.getText().matches("[0-9]+")){
-//            saveConfig(capcom, squareEnix, Integer.parseInt(configdayDuration.getText()));
-//        }else{
-//            JOptionPane.showMessageDialog(null, "Error, el cuadro de dias restantes solo debe contener numeros");
-//        }
+ 
 
     }//GEN-LAST:event_GuardarActionPerformed
 
     private void mostrarNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarNickActionPerformed
         // TODO add your handling code here:        
-        if(!GuionistasNick.getText().equals("0") && !DisenadoresNick.getText().equals("0") && !AnimadorNick.getText().equals("0") && !ActoresNick.getText().equals("0") 
-        && !GuioPlotNick.getText().equals("0") && !EnsambladoresNick.getText().equals("0")){
+ 
            nick.setVisible(true); 
-        }else{
-           JOptionPane.showMessageDialog(null, "Debe haber al menos un trabajador de cada tipo para poder realizar el capitulo");
-        }
+       
+            cartoon.setVisible(true); 
+      
+            starchannel.setVisible(true); 
+       
         
     }//GEN-LAST:event_mostrarNickActionPerformed
 
     private void MenosGuiCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuiCartoonActionPerformed
         // TODO add your handling code here:
+         if (this.Cartoon.getGuionistas().getSize() > 1) {
+            this.Cartoon.eliminarTrabajador(0);
+        } else {
+            minErrorTrab();
+        }
     }//GEN-LAST:event_MenosGuiCartoonActionPerformed
 
     private void MasPlotStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasPlotStarActionPerformed
         // TODO add your handling code here:
+         Trabajadores start1 = new Trabajadores(4, "StarChannel", duracionDia, StarChannel.getDrive(), StarChannel.getMutex());
+        StarChannel.AggTrabajador(start1);
     }//GEN-LAST:event_MasPlotStarActionPerformed
+
+    private void MasGuioCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasGuioCartoonActionPerformed
+        // TODO add your handling code here:
+        Trabajadores cartoont1 = new Trabajadores(0, "Cartoon", duracionDia, Cartoon.getDrive(), Cartoon.getMutex());
+        Cartoon.AggTrabajador(cartoont1);
+    }//GEN-LAST:event_MasGuioCartoonActionPerformed
+
+    private void MenosDiseñadorCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosDiseñadorCartoonActionPerformed
+        // TODO add your handling code here:
+            if (this.Cartoon.getDisenadores().getSize() > 1) {
+            this.Cartoon.eliminarTrabajador(1);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosDiseñadorCartoonActionPerformed
+
+    private void MasDiseñadorCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasDiseñadorCartoonActionPerformed
+        // TODO add your handling code here:
+        Trabajadores cartoont1 = new Trabajadores(1, "Cartoon", duracionDia, Cartoon.getDrive(), Cartoon.getMutex());
+        Cartoon.AggTrabajador(cartoont1);
+    }//GEN-LAST:event_MasDiseñadorCartoonActionPerformed
+
+    private void MenosAnimadorCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosAnimadorCartoonActionPerformed
+        // TODO add your handling code here:
+        if (this.Cartoon.getAnimadores().getSize() > 1) {
+            this.Cartoon.eliminarTrabajador(2);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosAnimadorCartoonActionPerformed
+
+    private void MasAnimadorCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasAnimadorCartoonActionPerformed
+        // TODO add your handling code here:
+        Trabajadores cartoont1 = new Trabajadores(2, "Cartoon", duracionDia, Cartoon.getDrive(), Cartoon.getMutex());
+        Cartoon.AggTrabajador(cartoont1);
+    }//GEN-LAST:event_MasAnimadorCartoonActionPerformed
+
+    private void MenosActCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActCartoonActionPerformed
+        // TODO add your handling code here:
+           if (this.Cartoon.getActores().getSize() > 1) {
+            this.Cartoon.eliminarTrabajador(3);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosActCartoonActionPerformed
+
+    private void MasActCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActCartoonActionPerformed
+        // TODO add your handling code here:
+        Trabajadores cartoont1 = new Trabajadores(3, "Cartoon", duracionDia, Cartoon.getDrive(), Cartoon.getMutex());
+        Cartoon.AggTrabajador(cartoont1);
+    }//GEN-LAST:event_MasActCartoonActionPerformed
+
+    private void MenosPlotCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosPlotCartoonActionPerformed
+        // TODO add your handling code here:
+        if (this.Cartoon.getGuionistasPT().getSize() > 1) {
+            this.Cartoon.eliminarTrabajador(4);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosPlotCartoonActionPerformed
+
+    private void MasPlotCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasPlotCartoonActionPerformed
+        // TODO add your handling code here:
+        
+        Trabajadores cartoont1 = new Trabajadores(4, "Cartoon", duracionDia, Cartoon.getDrive(), Cartoon.getMutex());
+        Cartoon.AggTrabajador(cartoont1);
+    }//GEN-LAST:event_MasPlotCartoonActionPerformed
+
+    private void MenosEnsambCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosEnsambCartoonActionPerformed
+        // TODO add your handling code here:
+        if (this.Cartoon.getEnsambladores().getSize() > 1) {
+            this.Cartoon.borrarEnsamblador();
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosEnsambCartoonActionPerformed
+
+    private void MasEnsambCartoonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasEnsambCartoonActionPerformed
+        // TODO add your handling code here:
+        Ensamblador cartoone1 = new Ensamblador(Cartoon.getDrive(), Cartoon.getMutex(), duracionDia);
+        Cartoon.AggEnsamblador(cartoone1);
+    }//GEN-LAST:event_MasEnsambCartoonActionPerformed
+
+    private void MenosGuioStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosGuioStarActionPerformed
+        // TODO add your handling code here:
+       if (this.StarChannel.getGuionistas().getSize() > 1) {
+            this.StarChannel.eliminarTrabajador(0);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosGuioStarActionPerformed
+
+    private void MasGuioStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasGuioStarActionPerformed
+        // TODO add your handling code here:
+        Trabajadores start1 = new Trabajadores(0, "StarChannel", duracionDia, StarChannel.getDrive(), StarChannel.getMutex());
+        StarChannel.AggTrabajador(start1);
+    }//GEN-LAST:event_MasGuioStarActionPerformed
+
+    private void MenosDiseñadorStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosDiseñadorStarActionPerformed
+        // TODO add your handling code here:
+            if (this.StarChannel.getDisenadores().getSize() > 1) {
+            this.StarChannel.eliminarTrabajador(1);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosDiseñadorStarActionPerformed
+
+    private void MasDiseñadorStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasDiseñadorStarActionPerformed
+        // TODO add your handling code here:
+        Trabajadores start1 = new Trabajadores(1, "StarChannel", duracionDia, StarChannel.getDrive(), StarChannel.getMutex());
+        StarChannel.AggTrabajador(start1);
+    }//GEN-LAST:event_MasDiseñadorStarActionPerformed
+
+    private void MenosAnimadorStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosAnimadorStarActionPerformed
+        // TODO add your handling code here:
+            if (this.StarChannel.getAnimadores().getSize() > 1) {
+            this.StarChannel.eliminarTrabajador(2);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosAnimadorStarActionPerformed
+
+    private void MasAnimadorStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasAnimadorStarActionPerformed
+        // TODO add your handling code here:
+        Trabajadores start1 = new Trabajadores(2, "StarChannel", duracionDia, StarChannel.getDrive(), StarChannel.getMutex());
+        StarChannel.AggTrabajador(start1);
+    }//GEN-LAST:event_MasAnimadorStarActionPerformed
+
+    private void MenosActoresStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActoresStarActionPerformed
+        // TODO add your handling code here:
+           if (this.StarChannel.getActores().getSize() > 1) {
+            this.StarChannel.eliminarTrabajador(3);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosActoresStarActionPerformed
+
+    private void MasActoresStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasActoresStarActionPerformed
+        // TODO add your handling code here:
+        Trabajadores start1 = new Trabajadores(3, "StarChannel", duracionDia, StarChannel.getDrive(), StarChannel.getMutex());
+        StarChannel.AggTrabajador(start1);
+    }//GEN-LAST:event_MasActoresStarActionPerformed
+
+    private void MenosPlotStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosPlotStarActionPerformed
+        // TODO add your handling code here:
+          if (this.StarChannel.getGuionistasPT().getSize() > 1) {
+            this.StarChannel.eliminarTrabajador(4);
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosPlotStarActionPerformed
+
+    private void MenosEnsambStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosEnsambStarActionPerformed
+        // TODO add your handling code here:
+        if (this.StarChannel.getEnsambladores().getSize() > 1) {
+            this.StarChannel.borrarEnsamblador();
+        } else {
+            minErrorTrab();
+        }
+    }//GEN-LAST:event_MenosEnsambStarActionPerformed
+
+    private void MasEnsambStarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasEnsambStarActionPerformed
+        // TODO add your handling code here:
+        Ensamblador start1 = new Ensamblador(StarChannel.getDrive(), StarChannel.getMutex(), duracionDia);
+        StarChannel.AggEnsamblador(start1);
+    }//GEN-LAST:event_MasEnsambStarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1038,8 +1348,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton MasEnsambStar;
     private javax.swing.JButton MasEnsambladoresNick;
     private javax.swing.JButton MasGuioCartoon;
-    private javax.swing.JButton MasGuioPlot;
     private javax.swing.JButton MasGuioPlotNick;
+    private javax.swing.JButton MasGuioStar;
     private javax.swing.JButton MasGuionistaNick;
     private javax.swing.JButton MasPlotCartoon;
     private javax.swing.JButton MasPlotStar;
@@ -1056,8 +1366,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton MenosEnsambStar;
     private javax.swing.JButton MenosEnsambladoresNick;
     private javax.swing.JButton MenosGuiCartoon;
-    private javax.swing.JButton MenosGuioPlot;
     private javax.swing.JButton MenosGuioPlotNick;
+    private javax.swing.JButton MenosGuioStar;
     private javax.swing.JButton MenosGuionistasNick;
     private javax.swing.JButton MenosPlotCartoon;
     private javax.swing.JButton MenosPlotStar;

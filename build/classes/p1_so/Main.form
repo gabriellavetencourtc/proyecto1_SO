@@ -196,9 +196,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="GuionistasStar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="MenosGuioPlot" min="-2" max="-2" attributes="0"/>
+                      <Component id="MenosGuioStar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="MasGuioPlot" min="-2" max="-2" attributes="0"/>
+                      <Component id="MasGuioStar" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="AnimadorStar" min="-2" max="-2" attributes="0"/>
@@ -273,8 +273,8 @@
                   <Component id="MasGuioCartoon" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="GuionistasStar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="MenosGuioPlot" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="MasGuioPlot" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="MenosGuioStar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="MasGuioStar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -732,56 +732,89 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasGuioCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosDise&#xf1;adorCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosDise&#xf1;adorCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasDise&#xf1;adorCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasDise&#xf1;adorCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosAnimadorCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosAnimadorCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasAnimadorCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasAnimadorCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosActCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosActCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasActCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasActCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosPlotCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosPlotCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasPlotCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasPlotCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosEnsambCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosEnsambCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasEnsambCartoon">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasEnsambCartoonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel22">
       <Properties>
@@ -858,50 +891,77 @@
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="MenosGuioPlot">
+    <Component class="javax.swing.JButton" name="MenosGuioStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosGuioStarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="MasGuioPlot">
+    <Component class="javax.swing.JButton" name="MasGuioStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasGuioStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosDise&#xf1;adorStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosDise&#xf1;adorStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasDise&#xf1;adorStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasDise&#xf1;adorStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosAnimadorStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosAnimadorStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasAnimadorStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasAnimadorStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosActoresStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosActoresStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasActoresStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasActoresStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MenosPlotStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosPlotStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasPlotStar">
       <Properties>
@@ -915,11 +975,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenosEnsambStarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="MasEnsambStar">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MasEnsambStarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
